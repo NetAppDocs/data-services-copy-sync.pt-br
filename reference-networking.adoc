@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: reference-networking.html 
+keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
+summary: A rede para o NetApp Copy and Sync inclui conectividade entre o grupo de corretores de dados e os locais de origem e destino, além de uma conexão de saída de internet dos corretores de dados pela porta 443. 
+---
+= Visão geral de rede para NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A rede para o NetApp Copy and Sync inclui conectividade entre o grupo de corretores de dados e os locais de origem e destino, além de uma conexão de saída de internet dos corretores de dados pela porta 443.
+
+
+
+== Localização do corretor de dados
+
+Um grupo de corretores de dados consiste em um ou mais corretores de dados instalados na nuvem ou em suas instalações.
+
+
+
+=== Corretor de dados na nuvem
+
+A imagem a seguir mostra um corretor de dados em execução na nuvem, na AWS, no Google Cloud ou no Azure.  A origem e o destino podem estar em qualquer local, desde que haja uma conexão com o corretor de dados.  Por exemplo, você pode ter uma conexão VPN do seu data center para seu provedor de nuvem.
+
+
+NOTE: Quando o Copy and Sync implanta o data broker na AWS, Azure ou Google Cloud, ele cria um grupo de segurança que permite a comunicação de saída necessária.
+
+image:diagram_networking_cloud2.png["Um diagrama que mostra o Copy and Sync, o corretor de dados em execução na nuvem e as conexões com a origem e o destino."]
+
+
+
+=== Corretor de dados em suas instalações
+
+A imagem a seguir mostra o data broker em execução no local em um data center.  Novamente, a origem e o destino podem estar em qualquer local, desde que haja uma conexão com o corretor de dados.
+
+image:diagram_networking_onprem.png["Um diagrama que mostra o Copy and Sync, o data broker em execução no local e as conexões com a origem e o destino."]
+
+
+
+== Requisitos de rede
+
+* A origem e o destino devem ter uma conexão de rede com o grupo de corretores de dados.
++
+Por exemplo, se um servidor NFS estiver no seu data center e um data broker estiver na AWS, você precisará de uma conexão de rede (VPN ou Direct Connect) da sua rede para a VPC.
+
+* Um corretor de dados precisa de uma conexão de saída com a Internet para poder consultar o Copy and Sync para tarefas na porta 443.
+* A NetApp recomenda configurar os agentes de origem, destino e dados para usar um serviço NTP (Network Time Protocol).  A diferença de tempo entre os três componentes não deve exceder 5 minutos.
+
+
+
+
+== Pontos de extremidade de rede
+
+O NetApp Data Broker requer acesso de saída à Internet pela porta 443 para se comunicar com o Copy and Sync e para entrar em contato com alguns outros serviços e repositórios.  Seu navegador local também requer acesso a endpoints para determinadas ações.  Se você precisar limitar a conectividade de saída, consulte a seguinte lista de endpoints ao configurar seu firewall para tráfego de saída.
+
+
+
+=== Pontos de extremidade do corretor de dados
+
+Um corretor de dados contata os seguintes terminais:
+
+[cols="38,62"]
+|===
+| Pontos finais | Propósito 
+
+
+| \ https://olcentgbl.trafficmanager.net | Para entrar em contato com um repositório para atualizar pacotes CentOS para o host do data broker.  Este ponto de extremidade será contatado somente se você instalar manualmente o data broker em um host CentOS. 
+
+
+| \ https://rpm.nodesource.com \ https://registry.npmjs.org \ https://nodejs.org: | Para entrar em contato com repositórios para atualização de Node.js, npm e outros pacotes de terceiros usados no desenvolvimento. 
+
+
+| \ https://tgz.pm2.io | Para acessar um repositório para atualização do PM2, que é um pacote de terceiros usado para monitorar o Copy and Sync. 
+
+
+| \ https://sqs.us-east-1.amazonaws.com \ https://kinesis.us-east-1.amazonaws.com | Para entrar em contato com os serviços da AWS que o Copy and Sync usa para operações (enfileiramento de arquivos, registro de ações e entrega de atualizações ao data broker). 
+
+
+| \ https://s3._region_.amazonaws.com Por exemplo: s3.us-east-2.amazonaws.com:443https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region["Consulte a documentação da AWS para obter uma lista de endpoints S3"^] | Para entrar em contato com o Amazon S3 quando um relacionamento de sincronização inclui um bucket do S3. 
+
+
+| \ https://s3.amazonaws.com/ | Quando você baixa os logs do data broker do Copy and Sync, o data broker compacta seu diretório de logs e carrega os logs em um bucket S3 predefinido na região us-east-1. 
+
+
+| \ https://storage.googleapis.com/ | Para entrar em contato com o Google Cloud quando um relacionamento de sincronização usa um bucket do GCP. 
+
+
+| https://_storage-account_.blob.core.windows.net[]Se estiver usando o Azure Data Lake Gen2:https://_storage-account_.dfs.core.windows.net[] Onde _storage-account_ é a conta de armazenamento de origem do usuário. | Para abrir o proxy para o endereço da conta de armazenamento do Azure de um usuário. 
+
+
+| \ https://cf.cloudsync.netapp.com \ https://repo.cloudsync.netapp.com | Para entrar em contato com Copy and Sync. 
+
+
+| \ https://support.netapp.com | Para entrar em contato com o suporte da NetApp ao usar uma licença BYOL para relacionamentos de sincronização. 
+
+
+| \ https://fedoraproject.org | Para instalar o 7z na máquina virtual do data broker durante a instalação e atualizações.  O 7z é necessário para enviar mensagens do AutoSupport ao suporte técnico da NetApp . 
+
+
+| \ https://sts.amazonaws.com \ https://sts.us-east-1.amazonaws.com | Para verificar as credenciais da AWS quando o data broker é implantado na AWS ou quando é implantado em suas instalações e as credenciais da AWS são fornecidas.  O corretor de dados entra em contato com esse ponto de extremidade durante a implantação, quando é atualizado e quando é reiniciado. 
+
+
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com | Para entrar em contato com a NetApp Data Classification ao usar a classificação para selecionar os arquivos de origem para um novo relacionamento de sincronização. 
+
+
+| \ https://pubsub.googleapis.com | Se estiver criando um relacionamento de sincronização contínua a partir de uma conta de armazenamento do Google. 
+
+
+| https://_storage-account_.queue.core.windows.net[]\ https://management.azure.com/subscriptions/ ${_subscriptionId_} /resourceGroups/${_resourceGroup_}/providers/Microsoft.EventGrid/* Onde _storage-account_ é a conta de armazenamento de origem do usuário, _subscriptionid_ é o ID da assinatura de origem e _resourceGroup_ é o grupo de recursos de origem. | Se estiver criando um relacionamento de sincronização contínua de uma conta de armazenamento do Azure. 
+|===
+
+
+=== Pontos finais do navegador da Web
+
+Seu navegador precisa acessar o seguinte endpoint para baixar logs para fins de solução de problemas:
+
+logs.cloudsync.netapp.com:443

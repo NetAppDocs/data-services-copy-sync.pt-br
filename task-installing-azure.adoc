@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: task-installing-azure.html 
+keywords: data broker, install, azure, networking, permissions, regions, install data broker in azure, install in azure, deploy in azure, deploy data broker in azure, networking requirements, port, ports, 443, port 443, ntp, network time protocol, azure data broker 
+summary: Ao criar um novo data broker, escolha a opção Azure Data Broker para implantar o software do data broker em uma nova máquina virtual em uma VNet.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação. 
+---
+= Crie um novo corretor de dados no Azure para o NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ao criar um novo grupo de corretores de dados para o NetApp Copy and Sync, escolha o Microsoft Azure para implantar o software do corretor de dados em uma nova máquina virtual em uma VNet.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
+
+Você também tem a opção de instalar o data broker em um host Linux existente na nuvem ou em suas instalações. link:task-installing-linux.html["Saber mais"] .
+
+
+
+== Regiões do Azure com suporte
+
+Todas as regiões são suportadas, exceto as regiões da China, Governo dos EUA e Departamento de Defesa dos EUA.
+
+
+
+== Privilégios de root
+
+O software do data broker é executado automaticamente como root no host Linux.  Executar como root é um requisito para operações do data broker.  Por exemplo, para montar ações.
+
+
+
+== Requisitos de rede
+
+* O corretor de dados precisa de uma conexão de saída com a Internet para poder consultar o serviço Copiar e Sincronizar em busca de tarefas pela porta 443.
++
+Quando o Copy and Sync implanta o data broker no Azure, ele cria um grupo de segurança que permite a comunicação de saída necessária.
+
++
+Se você precisar limitar a conectividade de saída, consultelink:reference-networking.html["a lista de endpoints que o corretor de dados contata"] .
+
+* A NetApp recomenda configurar o agente de origem, destino e dados para usar um serviço NTP (Network Time Protocol).  A diferença de tempo entre os três componentes não deve exceder 5 minutos.
+
+
+
+
+== Permissões necessárias para implantar o data broker no Azure
+
+Certifique-se de que a conta de usuário do Azure que você usa para implantar o data broker tenha as seguintes permissões:
+
+[source, json]
+----
+{
+    "Name": "Azure Data Broker",
+    "Actions": [
+					"Microsoft.Resources/subscriptions/read",
+                    "Microsoft.Resources/deployments/operationstatuses/read",
+                    "Microsoft.Resources/subscriptions/locations/read",
+                    "Microsoft.Network/networkInterfaces/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/deployments/operationStatuses/read",
+                    "Microsoft.Resources/deployments/cancel/action",
+                    "Microsoft.Compute/virtualMachines/read",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Compute/disks/delete",
+                    "Microsoft.Network/networkInterfaces/delete",
+                    "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/join/action",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/publicIPAddresses/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/read",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Network/publicIPAddresses/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+                    "Microsoft.Network/publicIPAddresses/join/action",
+                    "Microsoft.Network/networkInterfaces/join/action",
+                    "Microsoft.Storage/storageAccounts/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/write",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/delete",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action",
+                    "Microsoft.EventGrid/systemTopics/read",
+                    "Microsoft.EventGrid/systemTopics/write",
+                    "Microsoft.EventGrid/systemTopics/delete",
+                    "Microsoft.EventGrid/eventSubscriptions/write",
+                    "Microsoft.Storage/storageAccounts/write"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+                    "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        	        "Microsoft.Network/networkSecurityGroups/read",
+----
+....
+    ],
+    "NotActions": [],
+    "AssignableScopes": [],
+    "Description": "Azure Data Broker",
+    "IsCustom": "true"
+}
+....
+Observação:
+
+. As seguintes permissões são necessárias somente se você planeja habilitar o https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#settings["Configuração de sincronização contínua"] em um relacionamento de sincronização do Azure para outro local de armazenamento em nuvem:
++
+** 'Microsoft.Storage/storageAccounts/leitura',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/write',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/leitura',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/delete',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action',
+** 'Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/ação',
+** 'Microsoft.EventGrid/systemTopics/leitura',
+** 'Microsoft.EventGrid/systemTopics/write',
+** 'Microsoft.EventGrid/systemTopics/excluir',
+** 'Microsoft.EventGrid/eventSubscriptions/write',
+** 'Microsoft.Storage/storageAccounts/write'
+
+
++
+Além disso, o escopo atribuível deve ser definido como escopo de assinatura e *não* escopo de grupo de recursos se você planeja implementar a Sincronização Contínua no Azure.
+
+. As seguintes permissões só serão necessárias se você planeja escolher sua própria segurança para a criação do data broker:
++
+** "Microsoft.Network/networkSecurityGroups/securityRules/leitura"
+** "Microsoft.Network/networkSecurityGroups/leitura"
+
+
+
+
+
+
+== Método de autenticação
+
+Ao implantar o data broker, você precisará escolher um método de autenticação para a máquina virtual: uma senha ou um par de chaves pública-privada SSH.
+
+Para obter ajuda na criação de um par de chaves, consulte https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys["Documentação do Azure: Criar e usar um par de chaves pública-privada SSH para VMs Linux no Azure"^] .
+
+
+
+== Crie o corretor de dados
+
+Existem algumas maneiras de criar um novo corretor de dados.  Estas etapas descrevem como instalar um data broker no Azure ao criar um relacionamento de sincronização.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Criar nova sincronização*.
+. Na página *Definir relacionamento de sincronização*, escolha uma origem e um destino e selecione *Continuar*.
++
+Conclua as etapas até chegar à página *Data Broker Group*.
+
+. Na página *Grupo do Data Broker*, selecione *Criar Data Broker* e, em seguida, selecione *Microsoft Azure*.
++
+image:screenshot-azure.png["Uma captura de tela da página do Data Broker que permite escolher entre um data broker da AWS, Azure, Google Cloud e On-Prem."]
+
+. Digite um nome para o corretor de dados e selecione *Continuar*.
+. Se solicitado, faça login na sua conta da Microsoft.  Se não for solicitado, selecione *Fazer login no Azure*.
++
+O formulário é de propriedade e hospedado pela Microsoft. Suas credenciais não são fornecidas à NetApp.
+
+. Escolha um local para o corretor de dados e insira detalhes básicos sobre a máquina virtual.
++
+image:screenshot_azure_data_broker.png["Uma captura de tela da página de implantação do Azure que mostra os seguintes campos: Assinatura, Região do Azure, VNet, Sub-rede, Nome da VM, Nome de usuário, Método de autenticação e Grupo de recursos."]
+
++
+
+NOTE: Se você planeja implementar um relacionamento de Sincronização Contínua, deverá atribuir uma função personalizada ao seu corretor de dados.  Isso também pode ser feito manualmente após a criação do corretor.
+
+. Especifique uma configuração de proxy, se um proxy for necessário para acesso à Internet na VNet.
+. Selecione *Continuar*. Se você quiser adicionar permissões do S3 ao seu corretor de dados, insira suas chaves secretas e de acesso da AWS.
+. Selecione *Continuar* e mantenha a página aberta até que a implantação seja concluída.
++
+O processo pode levar até 7 minutos.
+
+. Em Copiar e sincronizar, selecione *Continuar* quando o corretor de dados estiver disponível.
+. Preencha as páginas do assistente para criar o novo relacionamento de sincronização.
+
+
+.Resultado
+Você implantou um corretor de dados no Azure e criou um novo relacionamento de sincronização.  Você pode usar este corretor de dados com relacionamentos de sincronização adicionais.
+
+.Recebeu uma mensagem sobre a necessidade de consentimento do administrador?
+****
+Se a Microsoft notificar você de que a aprovação do administrador é necessária porque o Copiar e Sincronizar precisa de permissão para acessar recursos na sua organização em seu nome, você terá duas opções:
+
+. Peça ao seu administrador do AD para lhe fornecer a seguinte permissão:
++
+No Azure, acesse *Centros de administração > Azure AD > Usuários e grupos > Configurações do usuário* e habilite *Os usuários podem consentir que aplicativos acessem dados da empresa em seu nome*.
+
+. Peça ao seu administrador do AD para consentir em seu nome com *CloudSync-AzureDataBrokerCreator* usando a seguinte URL (este é o ponto de extremidade de consentimento do administrador):
++
+\ https://login.microsoftonline.com/ {PREENCHA AQUI SEU ID DE LOCATÁRIO}/v2.0/adminconsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85&redirect_uri= https://cloudsync.netapp.com&scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read
+
++
+Conforme mostrado na URL, a URL do nosso aplicativo é \ https://cloudsync.netapp.com e o ID do cliente do aplicativo é 8ee4ca3a-bafa-4831-97cc-5a38923cab85.
+
+
+
+****
+
+
+== Detalhes sobre a VM do corretor de dados
+
+O Copy and Sync cria um data broker no Azure usando a seguinte configuração.
+
+Compatibilidade com Node.js:: v21.2.0
+Tipo VM:: DS4 v2 padrão
+vCPUs:: 8
+BATER:: 28 GB
+Sistema operacional:: Rocky Linux 9,0
+Tamanho e tipo de disco:: SSD Premium de 64 GB
+

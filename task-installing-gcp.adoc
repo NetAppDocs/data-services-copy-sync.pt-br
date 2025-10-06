@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: task-installing-gcp.html 
+keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account 
+summary: Ao criar um novo data broker, escolha a opção Google Cloud Data Broker para implantar o software do data broker em uma nova instância de máquina virtual em uma VPC.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação. 
+---
+= Crie um novo corretor de dados no Google Cloud para NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha o Google Cloud Platform para implantar o software de data broker em uma nova instância de máquina virtual em uma VPC do Google Cloud.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
+
+Você também tem a opção de instalar o data broker em um host Linux existente na nuvem ou em suas instalações. link:task-installing-linux.html["Saber mais"] .
+
+
+
+== Regiões do Google Cloud com suporte
+
+Todas as regiões são suportadas.
+
+
+
+== Privilégios de root
+
+O software do data broker é executado automaticamente como root no host Linux.  Executar como root é um requisito para operações do data broker.  Por exemplo, para montar ações.
+
+
+
+== Requisitos de rede
+
+* O corretor de dados precisa de uma conexão de saída com a Internet para poder consultar o Copy and Sync em busca de tarefas pela porta 443.
++
+Quando o Copy and Sync implanta o data broker no Google Cloud, ele cria um grupo de segurança que permite a comunicação de saída necessária.
+
++
+Se você precisar limitar a conectividade de saída, consultelink:reference-networking.html["a lista de endpoints que o corretor de dados contata"] .
+
+* A NetApp recomenda configurar o agente de origem, destino e dados para usar um serviço NTP (Network Time Protocol).  A diferença de tempo entre os três componentes não deve exceder 5 minutos.
+
+
+
+
+== Permissões necessárias para implantar o data broker no Google Cloud
+
+Certifique-se de que o usuário do Google Cloud que implanta o data broker tenha as seguintes permissões:
+
+[source, yaml]
+----
+- compute.networks.list
+- compute.regions.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.operations.get
+- iam.serviceAccounts.list
+----
+
+
+== Permissões necessárias para a conta de serviço
+
+Ao implantar o data broker, você precisa selecionar uma conta de serviço que tenha as seguintes permissões:
+
+[source, yaml]
+----
+- logging.logEntries.create
+- resourcemanager.projects.get
+- storage.buckets.get
+- storage.buckets.list
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.getIamPolicy
+- storage.objects.list
+- storage.objects.setIamPolicy
+- storage.objects.update
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+----
+Observações:
+
+. A permissão "iam.serviceAccounts.signJwt" é necessária somente se você estiver planejando configurar o data broker para usar um cofre externo da HashiCorp.
+. As permissões "pubsub.*" e "storage.buckets.update" são necessárias somente se você planeja habilitar a configuração de Sincronização Contínua em um relacionamento de sincronização do Google Cloud Storage para outro local de armazenamento em nuvem. link:task-creating-relationships.html#settings["Saiba mais sobre a opção Sincronização Contínua"] .
+. As permissões "cloudkms.cryptoKeys.list" e "cloudkms.keyRings.list" são necessárias somente se você planeja usar uma chave KMS gerenciada pelo cliente em um bucket de destino do Google Cloud Storage.
+
+
+
+
+== Crie o corretor de dados
+
+Existem algumas maneiras de criar um novo corretor de dados.  Estas etapas descrevem como instalar um data broker no Google Cloud ao criar um relacionamento de sincronização.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Criar nova sincronização*.
+. Na página *Definir relacionamento de sincronização*, escolha uma origem e um destino e selecione *Continuar*.
++
+Conclua as etapas até chegar à página *Data Broker Group*.
+
+. Na página *Grupo de Data Broker*, selecione *Criar Data Broker* e depois selecione *Google Cloud Platform*.
++
+image:screenshot-google.png["Uma captura de tela da página do Data Broker que permite escolher entre um data broker da AWS, Azure, Google Cloud e On-Prem."]
+
+. Digite um nome para o corretor de dados e selecione *Continuar*.
+. Se solicitado, faça login com sua conta do Google.
++
+O formulário é de propriedade e hospedado pelo Google. Suas credenciais não são fornecidas à NetApp.
+
+. Selecione um projeto e uma conta de serviço e, em seguida, escolha um local para o data broker, incluindo se você deseja habilitar ou desabilitar um endereço IP público.
++
+Se você não habilitar um endereço IP público, precisará definir um servidor proxy na próxima etapa.
+
++
+image:screenshot_data_broker_gcp.png["Uma captura de tela que mostra as informações necessárias para implantar um data broker no Google Cloud."]
+
+. Especifique uma configuração de proxy, se um proxy for necessário para acesso à Internet na VPC.
++
+Se um proxy for necessário para acesso à Internet, o proxy deverá estar no Google Cloud e usar a mesma conta de serviço que o corretor de dados.
+
+. Quando o corretor de dados estiver disponível, selecione *Continuar* em Copiar e sincronizar.
++
+A instância leva aproximadamente de 5 a 10 minutos para ser implantada.  Você pode monitorar o progresso em Copiar e Sincronizar, que é atualizado automaticamente quando a instância está disponível.
+
+. Preencha as páginas do assistente para criar o novo relacionamento de sincronização.
+
+
+.Resultado
+Você implantou um corretor de dados no Google Cloud e criou um novo relacionamento de sincronização.  Você pode usar este corretor de dados com relacionamentos de sincronização adicionais.
+
+
+
+== Conceder permissões para usar buckets em outros projetos do Google Cloud
+
+Quando você cria um relacionamento de sincronização e escolhe o Google Cloud Storage como origem ou destino, Copiar e sincronizar permite que você escolha entre os buckets que a conta de serviço do data broker tem permissão para usar.  Por padrão, isso inclui os buckets que estão no _mesmo_ projeto que a conta de serviço do data broker.  Mas você pode escolher buckets de _outros_ projetos se fornecer as permissões necessárias.
+
+.Passos
+. Abra o console do Google Cloud Platform e carregue o serviço Cloud Storage.
+. Selecione o nome do bucket que você gostaria de usar como origem ou destino em um relacionamento de sincronização.
+. Selecione *Permissões*.
+. Selecione *Adicionar*.
+. Insira o nome da conta de serviço do corretor de dados.
+. Selecione uma função que forneça<<Permissões necessárias para a conta de serviço,as mesmas permissões mostradas acima>> .
+. Selecione *Salvar*.
+
+
+.Resultado
+Ao configurar um relacionamento de sincronização, agora você pode escolher esse bucket como origem ou destino no relacionamento de sincronização.
+
+
+
+== Detalhes sobre a instância da VM do data broker
+
+O Copy and Sync cria um data broker no Google Cloud usando a seguinte configuração.
+
+Compatibilidade com Node.js:: v21.2.0
+Tipo de máquina:: n2-padrão-4
+vCPUs:: 4
+BATER:: 15 GB
+Sistema operacional:: Rocky Linux 9,0
+Tamanho e tipo de disco:: 20 GB HDD PD-padrão
+

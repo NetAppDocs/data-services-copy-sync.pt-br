@@ -1,0 +1,11 @@
+= Novo suporte de sistema operacional para corretor de dados
+:allow-uri-read: 
+
+
+
+
+=== Novo suporte de sistema operacional para corretor de dados
+
+O data broker agora é compatível com hosts que executam Red Hat Enterprise 9.4, Ubuntu 23.04 e Ubuntu 24.04.
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-host-requirements["Ver requisitos do host Linux"] .

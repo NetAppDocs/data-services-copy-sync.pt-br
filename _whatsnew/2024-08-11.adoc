@@ -1,0 +1,9 @@
+= Correções de bugs
+:allow-uri-read: 
+
+
+
+
+=== Correções de bugs
+
+Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A nova versão do data broker é 1.0.54.

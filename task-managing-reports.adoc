@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task-managing-reports.html 
+keywords: reports, sync reports, NetApp Copy and Sync reports, report errors, path reports 
+summary: Crie e visualize relatórios para obter informações que você pode usar com a ajuda da equipe da NetApp para ajustar a configuração de um data broker e melhorar o desempenho. 
+---
+= Crie e visualize relatórios para ajustar sua configuração no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crie e visualize relatórios no NetApp Copy and Sync para obter informações que você pode usar com a ajuda da equipe da NetApp para ajustar a configuração de um data broker e melhorar o desempenho.
+
+Cada relatório fornece detalhes detalhados sobre um caminho em um relacionamento de sincronização.  Incluirá quantos diretórios, arquivos e links simbólicos existem, a distribuição do tamanho dos arquivos, a profundidade e a largura dos diretórios, o tempo de modificação e o tempo de acesso.  Isso difere das estatísticas de sincronização, que estão disponíveis no painel após https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["criando e concluindo com sucesso uma sincronização"] .
+
+
+
+== Criar relatórios
+
+Cada vez que você cria um relatório, o Copiar e Sincronizar verifica o caminho e compila os detalhes em um relatório.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Relatórios*.
++
+Os caminhos (origem ou destino) em cada um dos seus relacionamentos de sincronização são exibidos em uma tabela.
+
+. Na coluna *Ações de relatórios*, vá para um caminho específico e selecione *Criar* ou selecione o menu de ações e selecione *Criar novo*.
+. Quando o relatório estiver pronto, selecione o menu de ação e selecione *Exibir*.
++
+Aqui está um relatório de exemplo para um caminho de sistema de arquivos.
+
++
+image:screenshot_sync_report.gif["Um relatório que mostra a quantidade de itens de sincronização, tamanho do arquivo, máximos, tempo de acesso, tempo de alteração e tempo de modificação."]
+
++
+E aqui está um relatório de exemplo para armazenamento de objetos.
+
++
+image:screenshot_sync_report_object.gif["Um relatório que mostra o número de itens de caminho, tamanho dos objetos, hora de modificação e classe de armazenamento."]
+
+
+
+
+
+== Baixar relatórios
+
+Você pode baixar um relatório em PDF para visualizá-lo offline ou compartilhá-lo.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Relatórios*.
+. Na coluna *Ações de relatórios*, selecione o menu de ações e selecione *Exibir*.
+. No canto superior direito do relatório, selecione o menu de ações e selecione *Baixar PDF*.
++
+image:screenshot-sync-download-report.png["Uma captura de tela da opção Baixar PDF que aparece depois que você seleciona o menu de ação em um relatório."]
+
+
+
+
+
+== Exibir erros do relatório
+
+A tabela Caminhos identifica se há algum erro presente no relatório mais recente.  Um erro identifica um problema que o Copy and Sync enfrentou ao escanear o caminho.
+
+Por exemplo, um relatório pode conter erros de permissão negada.  Esse tipo de erro pode afetar a capacidade do Copy and Sync de verificar todo o conjunto de arquivos e diretórios.
+
+Depois de visualizar a lista de erros, você pode resolver os problemas e executar o relatório novamente.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Relatórios*.
+. Na coluna *Erros*, identifique se há algum erro presente em um relatório.
+. Se houver erros, selecione a seta ao lado do número de erros.
++
+image:screenshot_sync_report_errors.gif["Uma captura de tela da tabela Caminhos que mostra o número de erros e uma pequena seta clicável na coluna Erros."]
+
+. Use as informações do erro para corrigir o problema.
++
+Depois de resolver o problema, o erro não deverá aparecer na próxima vez que você executar o relatório.
+
+
+
+
+
+== Excluir relatórios
+
+Você pode excluir um relatório se ele contiver um erro que você corrigiu ou se o relatório estiver relacionado a um relacionamento de sincronização que você removeu.
+
+.Passos
+. Selecione *Sincronizar > Relatórios*.
+. Na coluna *Ações de relatórios*, selecione o menu de ações para um caminho e selecione *Excluir último relatório* ou *Excluir todos os relatórios*.
+. Confirme que deseja excluir o(s) relatório(s).
+

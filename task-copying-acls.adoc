@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: task-copying-acls.html 
+keywords: permissions, access control list, acls, ntfs, cifs, smb, shares, robocopy, copy, transfer, activate, operating system, os, ram, cpu, networking, copy acls to the target 
+summary: 'O NetApp Copy and Sync pode copiar listas de controle de acesso (ACLs) entre compartilhamentos SMB e entre um compartilhamento SMB e um armazenamento de objetos (exceto para ONTAP S3).  Se necessário, você também tem a opção de preservar manualmente as ACLs entre compartilhamentos SMB usando o robocopy.' 
+---
+= Copiar ACLs de compartilhamentos SMB no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Copy and Sync pode copiar listas de controle de acesso (ACLs) entre compartilhamentos SMB e entre um compartilhamento SMB e um armazenamento de objetos (exceto para ONTAP S3).  Se necessário, você também tem a opção de preservar manualmente as ACLs entre compartilhamentos SMB usando o robocopy.
+
+.Escolhas
+* <<Configurar cópia e sincronização para copiar ACLs,Configurar o Copy and Sync para copiar ACLs automaticamente>>
+* <<Copiar manualmente ACLs entre compartilhamentos SMB,Copiar manualmente as ACLs entre compartilhamentos SMB>>
+
+
+
+
+== Configurar cópia e sincronização para copiar ACLs
+
+Copie ACLs entre compartilhamentos SMB e entre compartilhamentos SMB e armazenamento de objetos habilitando uma configuração ao criar um relacionamento ou depois de criar um relacionamento.
+
+.Antes de começar
+Este recurso funciona com _qualquer_ tipo de corretor de dados: AWS, Azure, Google Cloud Platform ou corretor de dados local.  O corretor de dados local pode ser executadolink:task-installing-linux.html["qualquer sistema operacional suportado"] .
+
+.Passos para um novo relacionamento
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Em Copiar e sincronizar, selecione *Criar nova sincronização*.
+. Arraste e solte um servidor SMB ou armazenamento de objetos como origem e um servidor SMB ou armazenamento de objetos como destino e selecione *Continuar*.
+. Na página *Servidor SMB*:
++
+.. Insira um novo servidor SMB ou selecione um servidor existente e selecione *Continuar*.
+.. Insira as credenciais para o servidor SMB.
+.. Escolha entre *Copiar somente arquivos*, *Copiar somente ACL* ou *Copiar arquivos e ACL* e selecione *Continuar*.
++
+image:screenshot_acl_support.png["Uma captura de tela que mostra a opção para habilitar Copiar Listas de Controle de Acesso para o destino."]
+
+
+
+. Siga as instruções restantes para criar o relacionamento de sincronização.
++
+Ao copiar ACLs do SMB para o armazenamento de objetos, você pode optar por copiar as ACLs para as tags do objeto ou para os metadados do objeto, dependendo do destino.  Para o Azure e o Google Cloud Storage, somente a opção de metadados está disponível.
+
++
+A captura de tela a seguir mostra um exemplo da etapa em que você pode fazer essa escolha.
+
++
+image:screenshot-sync-tags-metadata.png["Uma captura de tela da sexta etapa do assistente de relacionamento de sincronização ao copiar para o armazenamento de objetos.  Você pode optar por salvar as ACLs nas tags ou metadados do objeto."]
+
+
+
+.Passos para um relacionamento existente
+. Passe o mouse sobre o relacionamento de sincronização e selecione o menu de ação.
+. Selecione *Configurações*.
+. Escolha entre *Copiar somente arquivos*, *Copiar somente ACL* ou *Copiar arquivos e ACL* e selecione *Continuar*.
+. Selecione *Salvar configurações*.
+
+
+.Resultado
+Ao sincronizar dados, o Copiar e Sincronizar preserva as ACLs entre a origem e o destino.
+
+
+
+== Copiar manualmente ACLs entre compartilhamentos SMB
+
+Você pode preservar manualmente as ACLs entre compartilhamentos SMB usando o comando robocopy do Windows.
+
+.Passos
+. Identifique um host Windows que tenha acesso total aos dois compartilhamentos SMB.
+. Se algum dos pontos de extremidade exigir autenticação, use o comando *net use* para se conectar aos pontos de extremidade do host Windows.
++
+Você deve executar esta etapa antes de usar o robocopy.
+
+. Em Copiar e sincronizar, crie um novo relacionamento entre os compartilhamentos SMB de origem e de destino ou sincronize um relacionamento existente.
+. Após a conclusão da sincronização de dados, execute o seguinte comando no host do Windows para sincronizar as ACLs e a propriedade:
++
+ robocopy /E /COPY:SOU /secfix [source] [target] /w:0 /r:0 /XD ~snapshots /UNILOG:”[logfilepath]
++
+Tanto _source_ quanto _target_ devem ser especificados usando o formato UNC.  Por exemplo: \\<servidor>\<compartilhamento>\<caminho>
+
+

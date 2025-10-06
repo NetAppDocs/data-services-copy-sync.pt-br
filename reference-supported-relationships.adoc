@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-relationships.html 
+keywords: supported sync relationships, support, supported target, supported source 
+summary: O NetApp Copy and Sync permite que você sincronize dados de uma origem para um destino.  Isso é chamado de relacionamento de sincronização.  Você deve entender os relacionamentos suportados antes de começar. 
+---
+= Relacionamentos de sincronização suportados no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Copy and Sync permite que você sincronize dados de uma origem para um destino.  Isso é chamado de relacionamento de sincronização.  Você deve entender os relacionamentos suportados antes de começar.
+
+[cols="20,25"]
+|===
+| Localização da fonte | Locais de destino suportados 
+
+
+| Amazon EFS  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Amazon FSx para ONTAP  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Amazon S3  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Caixa ^1^
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Blob do Azure  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Armazenamento do Azure Data Lake Gen2  a| 
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* FSx para ONTAP
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* ONTAP
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Azure NetApp Files  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Caixa ^1^  a| 
+* Amazon FSx para ONTAP
+* Amazon S3
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Cloud Volumes ONTAP  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Armazenamento em nuvem do Google  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Google Drive  a| 
+* Servidor NFS
+* Servidor SMB
+
+
+
+
+| Armazenamento de objetos em nuvem da IBM  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Caixa ^1^
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Servidor NFS  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Google Drive
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Cluster ONTAP local (NFS ou SMB)  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| Armazenamento ONTAP S3  a| 
+* Amazon S3
+* Armazenamento do Azure Data Lake Gen2
+* Armazenamento em nuvem do Google
+* Servidor NFS
+* Servidor SMB
+* StorageGRID
+* Armazenamento ONTAP S3
+
+
+
+
+| SFTP ^2^ | S3 
+
+
+| Servidor SMB  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Google Drive
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+
+
+| StorageGRID  a| 
+* Amazon EFS
+* Amazon FSx para ONTAP
+* Amazon S3
+* Blob do Azure
+* Armazenamento do Azure Data Lake Gen2
+* Azure NetApp Files
+* Caixa ^1^
+* Cloud Volumes ONTAP
+* Armazenamento em nuvem do Google
+* Armazenamento de objetos em nuvem da IBM
+* Servidor NFS
+* Cluster ONTAP local (NFS ou SMB)
+* Armazenamento ONTAP S3
+* Servidor SMB
+* StorageGRID
+
+
+|===
+Observações:
+
+. O suporte para caixa está disponível como uma prévia.
+. Os relacionamentos de sincronização com esta origem/destino são suportados somente usando a API Copiar e Sincronizar.
+. Você pode escolher uma camada específica de armazenamento de Blobs do Azure quando um contêiner de Blobs for o destino:
++
+** Armazenamento quente
+** Armazenamento refrigerado
+
+
+. [[storage-classes]]Você pode escolher uma classe de armazenamento S3 específica quando o Amazon S3 for o destino:
++
+** Padrão (esta é a classe padrão)
+** Camadas inteligentes
+** Acesso Padrão-Infrequente
+** Uma Zona - Acesso Infrequente
+** Arquivo Glacier Deep
+** Recuperação Flexível de Geleira
+** Recuperação instantânea de geleira
+
+
+. Você pode escolher uma classe de armazenamento específica quando um bucket do Google Cloud Storage for o destino:
++
+** Padrão
+** Nearline
+** Linha fria
+** Arquivo
+
+
+

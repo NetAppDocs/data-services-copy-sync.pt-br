@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: task-prepare-object-storage.html 
+keywords: prepare data broker, data broker, object storage, sync, scanner, configure scanner, bluexp, copy and sync 
+summary: 'Se você estiver planejando sincronizar dados de um armazenamento de objetos para outro (por exemplo, do Amazon S3 para o Azure Blob) usando o NetApp Copy and Sync, será necessário preparar o grupo do data broker antes de criar o relacionamento de sincronização.' 
+---
+= Preparar um data broker para sincronizar dados entre o armazenamento de objetos no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Se você estiver planejando sincronizar dados de um armazenamento de objetos para outro (por exemplo, do Amazon S3 para o Azure Blob) no NetApp Copy and Sync, será necessário preparar o grupo do data broker antes de criar o relacionamento de sincronização.
+
+.Sobre esta tarefa
+Para preparar o grupo do data broker, você precisará modificar a configuração do scanner.  Se você não modificar a configuração, poderá notar problemas de desempenho nesse relacionamento de sincronização.
+
+.Antes de começar
+O grupo de corretores de dados que você usa para sincronizar dados de armazenamento de objetos para armazenamento de objetos deve gerenciar apenas esses tipos de relacionamentos de sincronização.  Se o grupo de corretores de dados gerenciar um tipo diferente de relacionamento de sincronização (por exemplo, NFS para NFS ou armazenamento de objetos para SMB), o desempenho desses relacionamentos de sincronização poderá ser afetado negativamente.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Em Copiar e sincronizar, selecione *Gerenciar corretores de dados*.
+. Selecioneimage:icon-settings.png["Uma captura de tela do ícone de configurações"]
+. Atualize a configuração do scanner:
++
+.. Altere *Scanner Concurrency* para *1*.
+.. Alterar *Limite de processos do scanner* para *1*.
+
+
+. Selecione *Unificar configuração*.
+
+
+.Resultado
+Copiar e sincronizar atualiza a configuração do grupo de corretores de dados.
+
+.O que vem a seguir?
+Agora você pode criar o relacionamento de sincronização entre o armazenamento de objetos usando o grupo de corretores de dados que você acabou de configurar.

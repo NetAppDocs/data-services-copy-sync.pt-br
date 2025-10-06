@@ -1,0 +1,306 @@
+---
+sidebar: sidebar 
+permalink: task-managing-data-brokers.html 
+keywords: manage data brokers, manage data broker groups, data broker performance, data broker configuration, data broker removal, remove data broker, delete data broker, groups, data broker group, rename data broker group, add data broker, data broker cpu, data broker ram, data broker status, edit group name, change group name, modify group name 
+summary: Um corretor de dados sincroniza dados de um local de origem para um local de destino.  Um corretor de dados é necessário para cada relacionamento de sincronização que você cria.  Gerencie corretores de dados adicionando um novo corretor de dados a um grupo, visualizando informações sobre corretores de dados e muito mais. 
+---
+= Gerenciar grupos de corretores de dados no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Um grupo de corretores de dados no NetApp Copy and Sync sincroniza dados de um local de origem para um local de destino.  Pelo menos um corretor de dados é necessário em um grupo para cada relacionamento de sincronização que você cria.  Gerencie grupos de corretores de dados adicionando um novo corretor de dados a um grupo, visualizando informações sobre grupos e muito mais.
+
+
+
+== Como funcionam os grupos de corretores de dados
+
+Um grupo de corretores de dados pode incluir um ou mais corretores de dados.  Agrupar corretores de dados pode ajudar a melhorar o desempenho dos relacionamentos de sincronização.
+
+
+
+=== Os grupos podem gerenciar vários relacionamentos
+
+Um grupo de corretores de dados pode gerenciar um ou mais relacionamentos de sincronização por vez.
+
+Por exemplo, digamos que você tenha três relacionamentos:
+
+* O relacionamento 1 é gerenciado pelo grupo de corretores de dados A
+* O relacionamento 2 é gerenciado pelo grupo de corretores de dados B
+* O relacionamento 3 é gerenciado pelo grupo de corretores de dados A
+
+
+Você deseja acelerar o desempenho do relacionamento 1, então adiciona um novo corretor de dados ao grupo de corretores de dados A. Como o grupo A também gerencia o relacionamento de sincronização 3, o desempenho de sincronização do relacionamento também é acelerado automaticamente.
+
+
+
+=== Número de corretores de dados em um grupo
+
+Em muitos casos, um único corretor de dados pode atender aos requisitos de desempenho para um relacionamento de sincronização.  Caso contrário, você pode acelerar o desempenho da sincronização adicionando corretores de dados adicionais ao grupo.  Mas primeiro você deve verificar outros fatores que podem afetar o desempenho da sincronização. link:faq.html#how-many-data-brokers-are-required-in-a-group["Saiba mais sobre como determinar quando vários corretores de dados são necessários"] .
+
+
+
+== Recomendações de segurança
+
+Para garantir a segurança da sua máquina de corretagem de dados, a NetApp recomenda o seguinte:
+
+* O SSH não deve permitir o encaminhamento X11
+* O SSH não deve permitir o encaminhamento de conexão TCP
+* SSH não deve permitir túneis
+* SSH não deve aceitar variáveis de ambiente do cliente
+
+
+Essas recomendações de segurança podem ajudar a evitar conexões não autorizadas à máquina do corretor de dados.
+
+
+
+== Adicionar um novo corretor de dados a um grupo
+
+Existem várias maneiras de criar um novo corretor de dados:
+
+* Ao criar um novo relacionamento de sincronização
++
+link:task-creating-relationships.html["Aprenda a criar um novo data broker ao criar um relacionamento de sincronização"] .
+
+* Na página *Gerenciar corretores de dados*, selecionando *Adicionar novo corretor de dados*, o que cria o corretor de dados em um novo grupo
+* Na página *Gerenciar corretores de dados*, criando um novo corretor de dados em um grupo existente
+
+
+.Antes de começar
+* Não é possível adicionar corretores de dados a um grupo que gerencia um relacionamento de sincronização criptografado.
+* Se você quiser criar um corretor de dados em um grupo existente, o corretor de dados deverá ser um corretor de dados local ou do mesmo tipo.
++
+Por exemplo, se um grupo incluir um corretor de dados da AWS, você poderá criar um corretor de dados da AWS ou um corretor de dados local nesse grupo.  Você não pode criar um corretor de dados do Azure ou do Google Cloud porque eles não são o mesmo tipo de corretor de dados.
+
+
+
+.Etapas para criar um corretor de dados em um novo grupo
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecione *Adicionar novo corretor de dados*.
+. Siga as instruções para criar o data broker.
++
+Para obter ajuda, consulte as seguintes páginas:
+
++
+** link:task-installing-aws.html["Crie um corretor de dados na AWS"]
+** link:task-installing-azure.html["Crie um corretor de dados no Azure"]
+** link:task-installing-gcp.html["Crie um corretor de dados no Google Cloud"]
+** link:task-installing-linux.html["Instalando o data broker em um host Linux"]
+
+
+
+
+.Etapas para criar um corretor de dados em um grupo existente
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecione o menu de ação e selecione *Adicionar Data Broker*.
++
+image:screenshot_sync_group_add.png["Uma captura de tela do menu de ações disponível para cada corretor de dados individual em um grupo."]
+
+. Siga as instruções para criar o data broker no grupo.
++
+Para obter ajuda, consulte as seguintes páginas:
+
++
+** link:task-installing-aws.html["Crie um corretor de dados na AWS"]
+** link:task-installing-azure.html["Crie um corretor de dados no Azure"]
+** link:task-installing-gcp.html["Crie um corretor de dados no Google Cloud"]
+** link:task-installing-linux.html["Instalando o data broker em um host Linux"]
+
+
+
+
+
+
+== Editar o nome de um grupo
+
+Altere o nome de um grupo de corretores de dados a qualquer momento.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecione o menu de ação e selecione *Editar nome do grupo*.
++
+image:screenshot_sync_group_edit.gif["Uma captura de tela do menu de ações disponível para cada corretor de dados individual em um grupo."]
+
+. Digite um novo nome e selecione *Salvar*.
+
+
+.Resultado
+Copiar e sincronizar atualiza o nome do grupo do corretor de dados.
+
+
+
+== Configurar uma configuração unificada
+
+Se um relacionamento de sincronização encontrar erros durante o processo de sincronização, unificar a simultaneidade do grupo de corretores de dados pode ajudar a diminuir o número de erros de sincronização.  Esteja ciente de que alterações na configuração do grupo podem afetar o desempenho, tornando a transferência mais lenta.
+
+Não recomendamos alterar a configuração por conta própria.  Você deve consultar a NetApp para entender quando alterar a configuração e como alterá-la.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Gerenciar corretores de dados*.
+. Selecione o ícone Configurações para um grupo de corretores de dados.
++
+image:screenshot_sync_group_settings.png["Uma captura de tela que mostra o ícone Configurações para um grupo de corretores de dados."]
+
+. Altere as configurações conforme necessário e selecione *Unificar configuração*.
++
+Observe o seguinte:
+
++
+** Você pode escolher quais configurações alterar — não é necessário alterar todas as quatro de uma vez.
+** Depois que uma nova configuração é enviada a um corretor de dados, o corretor de dados é reiniciado automaticamente e usa a nova configuração.
+** Pode levar até um minuto para que essa alteração ocorra e fique visível na interface Copiar e Sincronizar.
+** Se um corretor de dados não estiver em execução, sua configuração não será alterada porque o Copy and Sync não poderá se comunicar com ele.  A configuração será alterada após a reinicialização do data broker.
+** Depois de definir uma configuração unificada, todos os novos corretores de dados usarão automaticamente a nova configuração.
+
+
+
+
+
+
+== Mover corretores de dados entre grupos
+
+Mova um corretor de dados de um grupo para outro se precisar acelerar o desempenho do grupo de corretores de dados de destino.
+
+Por exemplo, se um corretor de dados não estiver mais gerenciando um relacionamento de sincronização, você poderá movê-lo facilmente para outro grupo que esteja gerenciando relacionamentos de sincronização.
+
+.Limitações
+* Se um grupo de corretores de dados estiver gerenciando um relacionamento de sincronização e houver apenas um corretor de dados no grupo, você não poderá mover esse corretor de dados para outro grupo.
+* Não é possível mover um corretor de dados de ou para um grupo que gerencia relacionamentos de sincronização criptografados.
+* Você não pode mover um corretor de dados que esteja sendo implantado no momento.
+
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecioneimage:screenshot_sync_group_expand.gif["Uma captura de tela do botão que permite expandir a lista de corretores de dados em um grupo."] para expandir a lista de corretores de dados em um grupo.
+. Selecione o menu de ação para um corretor de dados e selecione *Mover corretor de dados*.
++
+image:screenshot_sync_group_remove.png["Uma captura de tela do menu de ações disponível para cada grupo individual de corretores de dados."]
+
+. Crie um novo grupo de corretores de dados ou selecione um grupo de corretores de dados existente.
+. Selecione *Mover*.
+
+
+.Resultado
+Copiar e sincronizar move o corretor de dados para um grupo de corretores de dados novo ou existente.  Se não houver outros corretores de dados no grupo anterior, o Copiar e Sincronizar o excluirá.
+
+
+
+== Atualizar configuração de proxy
+
+Atualize a configuração de proxy para um corretor de dados adicionando detalhes sobre uma nova configuração de proxy ou editando a configuração de proxy existente.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecioneimage:screenshot_sync_group_expand.gif["Uma captura de tela do botão que permite expandir a lista de corretores de dados em um grupo."] para expandir a lista de corretores de dados em um grupo.
+. Selecione o menu de ação para um corretor de dados e selecione *Editar configuração de proxy*.
+. Especifique detalhes sobre o proxy: nome do host, número da porta, nome de usuário e senha.
+. Selecione *Atualizar*.
+
+
+.Resultado
+O Copy and Sync atualiza o data broker para usar a configuração de proxy para acesso à Internet.
+
+
+
+== Visualizar a configuração de um corretor de dados
+
+Talvez você queira visualizar detalhes sobre um corretor de dados para identificar coisas como seu nome de host, endereço IP, CPU e RAM disponíveis e muito mais.
+
+O Copy and Sync fornece os seguintes detalhes sobre um corretor de dados:
+
+* Informações básicas: ID da instância, nome do host, etc.
+* Rede: Região, rede, sub-rede, IP privado, etc.
+* Software: distribuição Linux, versão do data broker, etc.
+* Hardware: CPU e RAM
+* Configuração: Detalhes sobre os dois tipos de processos principais do data broker: scanner e transferidor
++
+
+TIP: O scanner verifica a origem e o destino e decide o que deve ser copiado.  O transferidor faz a cópia propriamente dita.  A equipe da NetApp pode usar esses detalhes de configuração para sugerir ações que podem otimizar o desempenho.
+
+
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecioneimage:screenshot_sync_group_expand.gif["Uma captura de tela do botão que permite expandir a lista de corretores de dados em um grupo."] para expandir a lista de corretores de dados em um grupo.
+. Selecioneimage:screenshot_sync_group_expand.gif["Uma captura de tela do botão que permite expandir detalhes sobre um corretor de dados."] para visualizar detalhes sobre um corretor de dados.
++
+image:screenshot_sync_data_broker_details.gif["Uma captura de tela de informações sobre um corretor de dados."]
+
+
+
+
+
+== Resolva problemas com um corretor de dados
+
+Copiar e sincronizar exibe um status para cada corretor de dados que pode ajudar você a solucionar problemas.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Identifique quaisquer corretores de dados que tenham o status "Desconhecido" ou "Falha".
++
+image:screenshot_sync_broker_status.gif["Uma captura de tela da exibição de status de Copiar e Sincronizar, onde um corretor de dados tem um status \"desconhecido\""]
+
+. Passe o mouse sobre oimage:screenshot_sync_status_icon.gif["Um ícone \"info\""] ícone para ver o motivo da falha.
+. Corrija o problema.
++
+Por exemplo, talvez seja necessário simplesmente reiniciar o data broker se ele estiver offline ou remover o data broker se a implantação inicial falhar.
+
+
+
+
+
+== Remover um corretor de dados de um grupo
+
+Você pode remover um corretor de dados de um grupo se ele não for mais necessário ou se a implantação inicial falhar.  Esta ação apenas exclui o data broker dos registros do Copy and Sync.  Você precisará excluir manualmente o data broker e quaisquer recursos adicionais da nuvem.
+
+.Coisas que você deve saber
+* Copiar e sincronizar exclui um grupo quando você remove o último data broker do grupo.
+* Não é possível remover o último data broker de um grupo se houver um relacionamento usando esse grupo.
+
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecioneimage:screenshot_sync_group_expand.gif["Uma captura de tela do botão que permite expandir a lista de corretores de dados em um grupo."] para expandir a lista de corretores de dados em um grupo.
+. Selecione o menu de ação para um corretor de dados e selecione *Remover corretor de dados*.
++
+image:screenshot_sync_group_remove.gif["Uma captura de tela do menu de ações disponível para cada grupo individual de corretores de dados."]
+
+. Selecione *Remover Data Broker*.
+
+
+.Resultado
+Copiar e sincronizar remove o corretor de dados do grupo.
+
+
+
+== Excluir um grupo de corretores de dados
+
+Se um grupo de corretores de dados não gerenciar mais nenhum relacionamento de sincronização, você poderá excluir o grupo, o que removerá todos os corretores de dados do Copy and Sync.
+
+Os corretores de dados que o Copy and Sync remove são excluídos apenas dos registros do Copy and Sync.  Você precisará excluir manualmente a instância do data broker do seu provedor de nuvem e quaisquer recursos de nuvem adicionais.
+
+.Passos
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Sincronizar > Gerenciar corretores de dados*.
+. Selecione o menu de ação e selecione *Excluir grupo*.
++
+image:screenshot_sync_group_add.png["Uma captura de tela do menu de ações disponível para cada corretor de dados individual em um grupo."]
+
+. Para confirmar, digite o nome do grupo e selecione *Excluir Grupo*.
+
+
+.Resultado
+Copiar e sincronizar remove os corretores de dados e exclui o grupo.

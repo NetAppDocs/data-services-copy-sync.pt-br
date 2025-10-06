@@ -1,0 +1,335 @@
+---
+sidebar: sidebar 
+permalink: reference-requirements.html 
+keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box 
+summary: Verifique se sua origem e destinos atendem aos seguintes requisitos. 
+---
+= Preparar a origem e o destino no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verifique se sua origem e destinos atendem aos seguintes requisitos no NetApp Copy and Sync.
+
+
+
+== Rede
+
+* A origem e o destino devem ter uma conexão de rede com o grupo de corretores de dados.
++
+Por exemplo, se um servidor NFS estiver no seu data center e um data broker estiver na AWS, você precisará de uma conexão de rede (VPN ou Direct Connect) da sua rede para a VPC.
+
+* A NetApp recomenda configurar os agentes de origem, de destino e de dados para usar um serviço NTP (Network Time Protocol).  A diferença de tempo entre os três componentes não deve exceder 5 minutos.
+
+
+
+
+== Diretório de destino
+
+Ao criar um relacionamento de sincronização, Copiar e Sincronizar permite que você selecione um diretório de destino existente e, opcionalmente, crie uma nova pasta dentro desse diretório.  Portanto, certifique-se de que seu diretório de destino preferido já exista.
+
+
+
+== Permissões para ler diretórios
+
+Para mostrar todos os diretórios ou pastas em uma origem ou destino, o Copiar e Sincronizar precisa de permissões de leitura no diretório ou pasta.
+
+NFS:: As permissões devem ser definidas na origem/destino com uid/gid em arquivos e diretórios.
+Armazenamento de objetos::
++
+--
+* Para AWS e Google Cloud, um corretor de dados deve ter permissões de lista de objetos (essas permissões são fornecidas por padrão se você seguir as etapas de instalação do corretor de dados).
+* Para Azure, StorageGRID e IBM, as credenciais inseridas ao configurar um relacionamento de sincronização devem ter permissões de lista de objetos.
+
+
+--
+PMEs:: As credenciais SMB inseridas ao configurar um relacionamento de sincronização devem ter permissões de lista de pastas.
+
+
+
+NOTE: O corretor de dados ignora os seguintes diretórios por padrão: .snapshot, ~snapshot, .copy-offload
+
+
+
+== [[s3]]Requisitos do bucket Amazon S3
+
+Certifique-se de que seu bucket do Amazon S3 atenda aos seguintes requisitos.
+
+
+
+=== Locais de corretores de dados com suporte para Amazon S3
+
+Relacionamentos de sincronização que incluem armazenamento S3 exigem um corretor de dados implantado na AWS ou em suas instalações.  Em ambos os casos, o Copy and Sync solicita que você associe o data broker a uma conta da AWS durante a instalação.
+
+* link:task-installing-aws.html["Aprenda a implantar o AWS Data Broker"]
+* link:task-installing-linux.html["Aprenda a instalar o data broker em um host Linux"]
+
+
+
+
+=== Regiões AWS suportadas
+
+Todas as regiões são suportadas, exceto as regiões da China.
+
+
+
+=== Permissões necessárias para buckets S3 em outras contas AWS
+
+Ao configurar um relacionamento de sincronização, você pode especificar um bucket do S3 que reside em uma conta da AWS que não está associada a um corretor de dados.
+
+link:media/aws_iam_policy_s3_bucket.json["As permissões incluídas neste arquivo JSON"^]deve ser aplicado ao bucket S3 para que um corretor de dados possa acessá-lo.  Essas permissões permitem que o data broker copie dados de e para o bucket e liste os objetos no bucket.
+
+Observe o seguinte sobre as permissões incluídas no arquivo JSON:
+
+. _<BucketName>_ é o nome do bucket que reside na conta da AWS que não está associado a um corretor de dados.
+. _<RoleARN>_ deve ser substituído por um dos seguintes:
++
+** Se um corretor de dados foi instalado manualmente em um host Linux, _RoleARN_ deve ser o ARN do usuário da AWS para o qual você forneceu credenciais da AWS ao implantar um corretor de dados.
+** Se um data broker foi implantado na AWS usando o modelo CloudFormation, _RoleARN_ deve ser o ARN da função do IAM criada pelo modelo.
++
+Você pode encontrar o ARN da função acessando o console do EC2, selecionando a instância do data broker e, em seguida, selecionando a função do IAM na guia Descrição.  Você deverá ver a página Resumo no console do IAM que contém o ARN da função.
+
++
+image:screenshot_iam_role_arn.gif["Uma captura de tela do console do AWS IAM mostrando um ARN de função."]
+
+
+
+
+
+
+
+== [[blob]]Requisitos de armazenamento do Azure Blob
+
+Certifique-se de que seu armazenamento de Blobs do Azure atenda aos seguintes requisitos.
+
+
+
+=== Locais de corretores de dados com suporte para o Azure Blob
+
+Um corretor de dados pode residir em qualquer local quando um relacionamento de sincronização inclui armazenamento de Blobs do Azure.
+
+
+
+=== Regiões do Azure com suporte
+
+Todas as regiões são suportadas, exceto as regiões da China, Governo dos EUA e Departamento de Defesa dos EUA.
+
+
+
+=== Cadeia de conexão para relacionamentos que incluem Azure Blob e NFS/SMB
+
+Ao criar um relacionamento de sincronização entre um contêiner de Blobs do Azure e um servidor NFS ou SMB, você precisa fornecer ao Copy and Sync a sequência de conexão da conta de armazenamento:
+
+image:screenshot_connection_string.gif["Mostra uma sequência de conexão, que está disponível no portal do Azure selecionando uma conta de armazenamento e, em seguida, selecionando Chaves de acesso."]
+
+Se você quiser sincronizar dados entre dois contêineres de Blobs do Azure, a cadeia de conexão deverá incluir um https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1["assinatura de acesso compartilhado"^] (SAS).  Você também tem a opção de usar um SAS ao sincronizar entre um contêiner Blob e um servidor NFS ou SMB.
+
+O SAS deve permitir acesso ao serviço Blob e a todos os tipos de recursos (Serviço, Contêiner e Objeto).  O SAS também deve incluir as seguintes permissões:
+
+* Para o contêiner Blob de origem: Ler e Listar
+* Para o contêiner Blob de destino: Ler, Escrever, Listar, Adicionar e Criar
+
+
+image:screenshot_connection_string_sas.gif["Mostra uma assinatura de acesso compartilhado, que está disponível no portal do Azure selecionando uma conta de armazenamento e, em seguida, selecionando Assinatura de acesso compartilhado."]
+
+
+NOTE: Se você optar por implementar um relacionamento de Sincronização Contínua que inclua um contêiner de Blobs do Azure, poderá usar uma cadeia de conexão regular ou uma cadeia de conexão SAS.  Se estiver usando uma string de conexão SAS, ela não deve ser configurada para expirar em um futuro próximo.
+
+
+
+== Armazenamento do Azure Data Lake Gen2
+
+Ao criar um relacionamento de sincronização que inclui o Azure Data Lake, você precisa fornecer ao Copy and Sync a sequência de conexão da conta de armazenamento.  Deve ser uma string de conexão regular, não uma assinatura de acesso compartilhado (SAS).
+
+
+
+== Requisito do Azure NetApp Files
+
+Use o nível de serviço Premium ou Ultra ao sincronizar dados de ou para o Azure NetApp Files.  Você poderá enfrentar falhas e problemas de desempenho se o nível de serviço do disco for Padrão.
+
+
+TIP: Consulte um arquiteto de soluções se precisar de ajuda para determinar o nível de serviço correto.  O tamanho do volume e o nível de volume determinam a taxa de transferência que você pode obter.
+
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits["Saiba mais sobre os níveis de serviço e a taxa de transferência do Azure NetApp Files"^] .
+
+
+
+== Requisitos da caixa
+
+* Para criar um relacionamento de sincronização que inclua o Box, você precisará fornecer as seguintes credenciais:
++
+** ID do cliente
+** Segredo do cliente
+** Chave privada
+** ID da chave pública
+** Senha
+** ID da empresa
+
+
+* Se você criar um relacionamento de sincronização do Amazon S3 para o Box, deverá usar um grupo de corretores de dados que tenha uma configuração unificada em que as seguintes configurações estejam definidas como 1:
++
+** Concorrência do Scanner
+** Limite de processos do scanner
+** Concorrência do Transferidor
+** Limite de Processos de Transferência
+
+
++
+link:task-managing-data-brokers.html#set-up-a-unified-configuration["Aprenda a definir uma configuração unificada para um grupo de corretores de dados"^] .
+
+
+
+
+
+== [[google]]Requisitos do bucket do Google Cloud Storage
+
+Certifique-se de que seu bucket do Google Cloud Storage atenda aos seguintes requisitos.
+
+
+
+=== Locais de corretores de dados com suporte para o Google Cloud Storage
+
+Relacionamentos de sincronização que incluem o Google Cloud Storage exigem um corretor de dados implantado no Google Cloud ou em suas instalações.  O Copy and Sync orienta você no processo de instalação do data broker quando você cria um relacionamento de sincronização.
+
+* link:task-installing-gcp.html["Aprenda a implantar o Google Cloud Data Broker"]
+* link:task-installing-linux.html["Aprenda a instalar o data broker em um host Linux"]
+
+
+
+
+=== Regiões do Google Cloud com suporte
+
+Todas as regiões são suportadas.
+
+
+
+=== Permissões para buckets em outros projetos do Google Cloud
+
+Ao configurar um relacionamento de sincronização, você pode escolher entre buckets do Google Cloud em diferentes projetos, se fornecer as permissões necessárias para a conta de serviço do data broker. link:task-installing-gcp.html["Aprenda a configurar a conta de serviço"] .
+
+
+
+=== Permissões para um destino SnapMirror
+
+Se a origem de um relacionamento de sincronização for um destino SnapMirror (que é somente leitura), as permissões "ler/listar" serão suficientes para sincronizar dados da origem para um destino.
+
+
+
+=== Criptografando um bucket do Google Cloud
+
+Você pode criptografar um bucket de destino do Google Cloud com uma chave KMS gerenciada pelo cliente ou com a chave padrão gerenciada pelo Google.  Se o bucket já tiver uma criptografia KMS adicionada, ela substituirá a criptografia padrão gerenciada pelo Google.
+
+Para adicionar uma chave KMS gerenciada pelo cliente, você precisará usar um corretor de dados com o https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["permissões corretas"] , e a chave deve estar na mesma região que o bucket.
+
+
+
+== Google Drive
+
+Ao configurar um relacionamento de sincronização que inclui o Google Drive, você precisará fornecer o seguinte:
+
+* O endereço de e-mail de um usuário que tem acesso ao local do Google Drive onde você deseja sincronizar os dados
+* O endereço de e-mail de uma conta de serviço do Google Cloud que tem permissões para acessar o Google Drive
+* Uma chave privada para a conta de serviço
+
+
+Para configurar a conta de serviço, siga as instruções na documentação do Google:
+
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#create_the_service_account_and_credentials["Crie a conta de serviço e as credenciais"^]
+* https://developers.google.com/admin-sdk/directory/v1/guides/delegation#delegate_domain-wide_authority_to_your_service_account["Delegar autoridade de todo o domínio à sua conta de serviço"^]
+
+
+Ao editar o campo Escopos do OAuth, insira os seguintes escopos:
+
+* \ https://www.googleapis.com/auth/drive
+* \ https://www.googleapis.com/auth/drive.file
+
+
+
+
+== Requisitos do servidor NFS
+
+* O servidor NFS pode ser um sistema NetApp ou um sistema não NetApp .
+* O servidor de arquivos deve permitir que um host do corretor de dados acesse as exportações pelas portas necessárias.
++
+** 111 TCP/UDP
+** 2049 TCP/UDP
+** 5555 TCP/UDP
+
+
+* As versões 3, 4.0, 4.1 e 4.2 do NFS são suportadas.
++
+A versão desejada deve estar habilitada no servidor.
+
+* Se você quiser sincronizar dados NFS de um sistema ONTAP , certifique-se de que o acesso à lista de exportação NFS para uma SVM esteja habilitado (vserver nfs modify -vserver _svm_name_ -showmount enabled).
++
+
+NOTE: A configuração padrão para showmount é _habilitado_ a partir do ONTAP 9.2.
+
+
+
+
+
+== Requisitos do ONTAP
+
+Se o relacionamento de sincronização incluir o Cloud Volumes ONTAP ou um cluster ONTAP local e você tiver selecionado NFSv4 ou posterior, será necessário habilitar as ACLs do NFSv4 no sistema ONTAP .  Isso é necessário para copiar as ACLs.
+
+
+
+== Requisitos de armazenamento do ONTAP S3
+
+Quando você configura um relacionamento de sincronização que inclui https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Armazenamento ONTAP S3"^] , você precisará fornecer o seguinte:
+
+* O endereço IP do LIF que está conectado ao ONTAP S3
+* A chave de acesso e a chave secreta que o ONTAP está configurado para usar
+
+
+
+
+== Requisitos do servidor SMB
+
+* O servidor SMB pode ser um sistema NetApp ou um sistema não NetApp .
+* Você precisa fornecer ao Copy and Sync credenciais que tenham permissões no servidor SMB.
++
+** Para um servidor SMB de origem, as seguintes permissões são necessárias: listar e ler.
++
+Os membros do grupo Operadores de backup são suportados com um servidor SMB de origem.
+
+** Para um servidor SMB de destino, as seguintes permissões são necessárias: listar, ler e gravar.
+
+
+* O servidor de arquivos deve permitir que um host do corretor de dados acesse as exportações pelas portas necessárias.
++
+** 139 TCP
+** 445 TCP
+** 137-138 UDP
+
+
+* As versões SMB 1.0, 2.0, 2.1, 3.0 e 3.11 são suportadas.
+* Conceda ao grupo "Administradores" permissões de "Controle total" para as pastas de origem e destino.
++
+Se você não conceder essa permissão, o corretor de dados poderá não ter permissões suficientes para obter as ACLs em um arquivo ou diretório.  Se isso ocorrer, você receberá o seguinte erro: "getxattr error 95"
+
+
+
+
+
+=== Limitação de SMB para diretórios e arquivos ocultos
+
+Uma limitação do SMB afeta diretórios e arquivos ocultos ao sincronizar dados entre servidores SMB.  Se algum dos diretórios ou arquivos no servidor SMB de origem estiver oculto pelo Windows, o atributo oculto não será copiado para o servidor SMB de destino.
+
+
+
+=== Comportamento de sincronização SMB devido à limitação de diferenciação entre maiúsculas e minúsculas
+
+O protocolo SMB não diferencia maiúsculas de minúsculas, o que significa que letras maiúsculas e minúsculas são tratadas como se fossem iguais.  Esse comportamento pode resultar em arquivos substituídos e erros de cópia de diretório, se um relacionamento de sincronização incluir um servidor SMB e os dados já existirem no destino.
+
+Por exemplo, digamos que há um arquivo chamado "a" na origem e um arquivo chamado "A" no destino.  Quando o Copiar e Sincronizar copia o arquivo chamado "a" para o destino, o arquivo "A" é substituído pelo arquivo "a" da origem.
+
+No caso de diretórios, digamos que há um diretório chamado "b" na origem e um diretório chamado "B" no destino.  Quando o Copy and Sync tenta copiar o diretório chamado "b" para o destino, o Copy and Sync recebe um erro informando que o diretório já existe.  Como resultado, o Copiar e Sincronizar sempre falha ao copiar o diretório chamado “b”.
+
+A melhor maneira de evitar essa limitação é garantir que você sincronize os dados com um diretório vazio.

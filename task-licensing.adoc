@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: task-licensing.html 
+keywords: license, subscription, registering, subscribing, subscribing in aws, subscribing in azure, subscribing to aws, subscribing to azure, aws marketplace, azure marketplace, netapp license, byol license, purchase a license, license settings, pay for relationships, paygo, annual, pay-as-you-go 
+summary: Há duas maneiras de pagar pelos relacionamentos de sincronização após o término do teste gratuito de 14 dias.  A primeira opção é pagar conforme o uso.  A segunda opção é comprar licenças diretamente da NetApp. 
+---
+= Pague pelos relacionamentos de sincronização após o término do teste gratuito do NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Há duas maneiras de pagar pelos relacionamentos de sincronização após o término do teste gratuito de 14 dias do NetApp Copy and Sync.  A primeira opção é assinar o AWS ou o Azure para pagar conforme o uso ou pagar anualmente.  A segunda opção é comprar licenças diretamente da NetApp.
+
+Você pode assinar no AWS Marketplace ou no Azure Marketplace.  Você não pode assinar ambos.
+
+Você tem a opção de usar licenças da NetApp com uma assinatura do marketplace.  Por exemplo, se você tiver 25 relacionamentos de sincronização, poderá pagar pelos primeiros 20 relacionamentos de sincronização usando uma licença e depois pagar conforme o uso da AWS ou do Azure com os 5 relacionamentos de sincronização restantes.
+
+link:concept-licensing.html["Saiba mais sobre como funcionam as licenças"] .
+
+Se você não pagar imediatamente após o término do seu teste gratuito, não poderá criar nenhum relacionamento adicional.  Os relacionamentos existentes não são excluídos, mas você não pode fazer nenhuma alteração neles até assinar ou inserir uma licença.
+
+As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplicável e *não* por meio das assinaturas do NetApp Console.
+
+
+
+== [[aws]]Inscreva-se na AWS
+
+A AWS permite que você pague conforme o uso ou anualmente.
+
+.Etapas para pagar conforme o uso
+. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. Selecione *Licenciamento*.
+. Selecione *AWS*.
+. Selecione *Inscrever-se* e depois selecione *Continuar*.
+. Inscreva-se no AWS Marketplace e depois faça login novamente no Copy and Sync para concluir o registro.
++
+O vídeo a seguir mostra o processo:
+
++
+.Assine o Copy and Sync no AWS Marketplace
+video::796ffd6d-cade-4750-8504-b24c010b225d[panopto]
+
+
+.Etapas para pagar anualmente
+. https://aws.amazon.com/marketplace/pp/B06XX5V3M2["Acesse a página do AWS Marketplace"^] .
+. Selecione *Continuar a assinar*.
+. Selecione suas opções de contrato e depois selecione *Criar contrato*.
+
+
+
+
+== [[azure]]Inscreva-se no Azure
+
+O Azure permite que você pague conforme o uso ou anualmente.
+
+.O que você vai precisar
+Uma conta de usuário do Azure que tenha permissões de Colaborador ou Proprietário na assinatura relevante.
+
+.Passos
+. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. Selecione *Licenciamento*.
+. Selecione *Azure*.
+. Selecione *Inscrever-se* e depois selecione *Continuar*.
+. No portal do Azure, selecione *Criar*, selecione suas opções e, em seguida, selecione *Assinar*.
++
+Selecione *Mensal* para pagar por hora ou *Anual* para pagar um ano adiantado.
+
+. Quando a implantação estiver concluída, selecione o nome do recurso SaaS no pop-up de notificação.
+. Selecione *Configurar conta* para retornar para Copiar e sincronizar.
++
+O vídeo a seguir mostra o processo:
+
++
+.Assine o Copy and Sync no Azure Marketplace
+video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
+
+
+
+
+== [[licenças]]Compre licenças da NetApp e adicione-as ao Copy and Sync
+
+Para pagar antecipadamente pelos seus relacionamentos de sincronização, você deve comprar uma ou mais licenças e adicioná-las ao Copiar e Sincronizar.
+
+.O que você vai precisar
+Você precisará do número de série da sua licença e do nome de usuário e senha da conta do site de suporte da NetApp à qual a licença está associada.
+
+.Passos
+. Compre uma licença pelo e-mail:ng-cloudsync-contact@netapp.com?subject=Cloud%20Sync%20Service%20-%20BYOL%20License%20Purchase%20Request[entrando em contato com a NetApp].
+. link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
+. Selecione *Licenciamento*.
+. Selecione *Adicionar licença* e adicione as informações necessárias:
++
+.. Digite o número de série.
+.. Selecione a conta do site de suporte da NetApp associada à licença que você está adicionando:
++
+*** Se sua conta já foi adicionada ao NetApp Console, selecione-a na lista suspensa.
+*** Se sua conta ainda não foi adicionada, selecione *Adicionar credenciais NSS*, insira o nome de usuário e a senha, selecione *Registrar* e, em seguida, selecione-a na lista suspensa.
+
+
+.. Selecione *Adicionar*.
+
+
+
+
+
+
+== Atualizar uma licença
+
+Se você estendeu uma licença do Copy and Sync adquirida da NetApp, a nova data de expiração não será atualizada automaticamente no Copy and Sync.  Você precisa adicionar a licença novamente para atualizar a data de expiração.  As licenças devem ser gerenciadas por meio do Copy and Sync ou do site aplicável e *não* por meio das assinaturas do NetApp Console.
+
+.Passos
+. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. Selecione *Licenciamento*.
+. Selecione *Adicionar licença* e adicione as informações necessárias:
++
+.. Digite o número de série.
+.. Selecione a conta do site de suporte da NetApp associada à licença que você está adicionando.
+.. Selecione *Adicionar*.
+
+
+
+
+.Resultado
+Copiar e sincronizar atualiza a licença existente com a nova data de expiração.

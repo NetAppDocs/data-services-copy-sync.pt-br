@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept-privacy.html 
+keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
+summary: A NetApp não tem acesso a nenhuma credencial fornecida ao usar o NetApp Copy and Sync.  As credenciais são armazenadas diretamente na máquina do corretor de dados, que reside na sua rede. 
+---
+= Privacidade de dados no NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A NetApp não tem acesso a nenhuma credencial fornecida ao usar o NetApp Copy and Sync.  As credenciais são armazenadas diretamente na máquina do corretor de dados, que reside na sua rede.
+
+Dependendo da configuração escolhida, o Copiar e Sincronizar pode solicitar credenciais quando você cria um novo relacionamento.  Por exemplo, ao configurar um relacionamento que inclui um servidor SMB ou ao implantar o data broker na AWS.
+
+Essas credenciais são sempre salvas diretamente no próprio corretor de dados.  O corretor de dados reside em uma máquina na sua rede, seja ela local ou na sua conta na nuvem.  As credenciais nunca são disponibilizadas para a NetApp.
+
+As credenciais são criptografadas localmente na máquina do corretor de dados usando o HashiCorp Vault.
