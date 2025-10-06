@@ -30,7 +30,7 @@ O CentOS Stream não é suportado.
 ** Red Hat Enterprise Linux 8.5, 8.8, 8.9 e 9.4
 ** Rocky Linux 9
 ** Ubuntu Server 20.04 LTS, 23.04 LTS e 24.04 LTS
-** SUSE Linux Enterprise Server 15 SP1
+** Servidor SUSE Linux Enterprise 15 SP1
 +
 O comando `yum update` deve ser executado no host antes de instalar o data broker.
 
@@ -143,7 +143,7 @@ A página de instruções carrega em breve.  Você precisará seguir estas instr
 .. Selecione uma opção de instalação: *Sem proxy*, *Usar servidor proxy* ou *Usar servidor proxy com autenticação*.
 +
 
-NOTE: O usuário deve ser um usuário local.  Usuários de domínio não são suportados.
+NOTE: O usuário deve ser um usuário local. Usuários de domínio não são suportados.
 
 .. Use os comandos para baixar e instalar o data broker.
 +
@@ -194,8 +194,8 @@ chmod +x data_broker_installer.sh
 ./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port> -u <proxy_username> -w <proxy_password>`
 
 +
-Chaves AWS:: Estas são as chaves para o usuário que você deve ter preparado<<Habilitar acesso à AWS,seguindo estes passos>> .  As chaves da AWS são armazenadas no corretor de dados, que é executado na sua rede local ou na nuvem.  A NetApp não usa as chaves fora do data broker.
-arquivo JSON:: Este é o arquivo JSON que contém uma chave de conta de serviço que você deveria ter preparado<<Habilitar acesso ao Google Cloud,seguindo estes passos>> .
+Chaves AWS:: Estas são as chaves para o usuário que você deve ter preparado<<Habilitar acesso à AWS,seguindo estes passos>> .  As chaves da AWS são armazenadas no data broker, que é executado na sua rede local ou na nuvem.  A NetApp não usa as chaves fora do data broker.
+arquivo JSON:: Este é o arquivo JSON que contém uma chave de conta de serviço que você deve ter preparado<<Habilitar acesso ao Google Cloud,seguindo estes passos>> .
 
 
 

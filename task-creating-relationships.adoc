@@ -111,7 +111,7 @@ Agendar:: Escolha uma programação recorrente para sincronizações futuras ou 
 Tempo limite de sincronização:: Defina se o Copiar e Sincronizar deve cancelar uma sincronização de dados se a sincronização não for concluída no número especificado de minutos, horas ou dias.
 Notificações:: Permite que você escolha se deseja receber notificações de cópia e sincronização no Centro de notificações do NetApp Console.  Você pode habilitar notificações para sincronizações de dados bem-sucedidas, sincronizações de dados com falha e sincronizações de dados canceladas.
 Tentativas:: Defina o número de vezes que o Copiar e Sincronizar deve tentar sincronizar um arquivo novamente antes de ignorá-lo.
-Sincronização Contínua:: Após a sincronização inicial de dados, o Copy and Sync monitora as alterações no bucket S3 de origem ou no bucket do Google Cloud Storage e sincroniza continuamente quaisquer alterações no destino conforme elas ocorrem.  Não há necessidade de verificar novamente a fonte em intervalos programados.
+Sincronização contínua:: Após a sincronização inicial de dados, o Copy and Sync monitora as alterações no bucket S3 de origem ou no bucket do Google Cloud Storage e sincroniza continuamente quaisquer alterações no destino conforme elas ocorrem.  Não há necessidade de verificar novamente a fonte em intervalos programados.
 +
 --
 Esta configuração está disponível somente ao criar um relacionamento de sincronização e quando você sincroniza dados de um bucket do S3 ou do Google Cloud Storage para o armazenamento de Blobs do Azure, CIFS, Google Cloud Storage, IBM Cloud Object Storage, NFS, S3 e StorageGRID *ou* do armazenamento de Blobs do Azure para o armazenamento de Blobs do Azure, CIFS, Google Cloud Storage, IBM Cloud Object Storage, NFS e StorageGRID.
@@ -231,7 +231,7 @@ NOTE: Regex, ou expressões regulares, são diferentes de curingas ou expressõe
 Tamanho do arquivo:: Escolha sincronizar todos os arquivos, independentemente do tamanho, ou apenas os arquivos que estejam em um intervalo de tamanho específico.
 Data de modificação:: Escolha todos os arquivos, independentemente da data da última modificação, arquivos modificados após uma data específica, antes de uma data específica ou entre um intervalo de tempo.
 Data de criação:: Quando um servidor SMB é a origem, essa configuração permite sincronizar arquivos que foram criados após uma data específica, antes de uma data específica ou entre um intervalo de tempo específico.
-ACL - Lista de Controle de Acesso:: Copie somente ACLs, somente arquivos ou ACLs e arquivos de um servidor SMB habilitando uma configuração ao criar um relacionamento ou depois de criá-lo.
+ACL - Lista de Controle de Acesso:: Copie somente ACLs, somente arquivos ou ACLs e arquivos de um servidor SMB habilitando uma configuração ao criar um relacionamento ou depois de criar um relacionamento.
 
 
 . Na página *Tags/Metadados*, escolha se deseja salvar um par chave-valor como uma tag em todos os arquivos transferidos para o bucket do S3 ou atribuir um par chave-valor de metadados em todos os arquivos.
@@ -251,12 +251,12 @@ Copiar e sincronizar inicia a sincronização de dados entre a origem e o destin
 
 
 
-== Crie relacionamentos de sincronização a partir da classificação de dados do NetApp
+== Crie relacionamentos de sincronização a partir da NetApp Data Classification
 
-O Copy and Sync é integrado ao NetApp Data Classification.  Na Classificação de Dados do NetApp , você pode selecionar os arquivos de origem que deseja sincronizar com um local de destino usando Copiar e Sincronizar.
+O Copy and Sync é integrado ao NetApp Data Classification.  Na NetApp Data Classification, você pode selecionar os arquivos de origem que deseja sincronizar com um local de destino usando Copiar e sincronizar.
 
 Depois de iniciar uma sincronização de dados do NetApp Data Classification, todas as informações de origem ficam contidas em uma única etapa e exigem apenas que você insira alguns detalhes importantes.  Em seguida, você escolhe o local de destino para o novo relacionamento de sincronização.
 
-image:screenshot-sync-data-sense.png["Uma captura de tela que mostra a página Integração de Classificação de Dados do NetApp que aparece após iniciar uma nova sincronização diretamente do NetApp Data Classification."]
+image:screenshot-sync-data-sense.png["Uma captura de tela que mostra a página Integração de NetApp Data Classification que aparece após iniciar uma nova sincronização diretamente do NetApp Data Classification."]
 
-https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["Aprenda como iniciar um relacionamento de sincronização a partir da Classificação de Dados da NetApp"^] .
+https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["Aprenda como iniciar um relacionamento de sincronização a partir da NetApp Data Classification"^] .

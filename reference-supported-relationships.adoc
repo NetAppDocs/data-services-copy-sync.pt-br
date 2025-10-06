@@ -317,7 +317,7 @@ Observações:
 +
 ** Padrão
 ** Nearline
-** Linha fria
+** Linha Fria
 ** Arquivo
 
 

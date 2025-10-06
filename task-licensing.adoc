@@ -24,7 +24,7 @@ link:concept-licensing.html["Saiba mais sobre como funcionam as licenças"] .
 
 Se você não pagar imediatamente após o término do seu teste gratuito, não poderá criar nenhum relacionamento adicional.  Os relacionamentos existentes não são excluídos, mas você não pode fazer nenhuma alteração neles até assinar ou inserir uma licença.
 
-As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplicável e *não* por meio das assinaturas do NetApp Console.
+As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplicável e *não* por meio das assinaturas do NetApp Console .
 
 
 
@@ -33,7 +33,7 @@ As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplic�
 A AWS permite que você pague conforme o uso ou anualmente.
 
 .Etapas para pagar conforme o uso
-. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. No menu de navegação do NetApp Console , selecione *Mobilidade > Copiar e sincronizar*.
 . Selecione *Licenciamento*.
 . Selecione *AWS*.
 . Selecione *Inscrever-se* e depois selecione *Continuar*.
@@ -62,7 +62,7 @@ O Azure permite que você pague conforme o uso ou anualmente.
 Uma conta de usuário do Azure que tenha permissões de Colaborador ou Proprietário na assinatura relevante.
 
 .Passos
-. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. No menu de navegação do NetApp Console , selecione *Mobilidade > Copiar e sincronizar*.
 . Selecione *Licenciamento*.
 . Selecione *Azure*.
 . Selecione *Inscrever-se* e depois selecione *Continuar*.
@@ -111,10 +111,10 @@ Você precisará do número de série da sua licença e do nome de usuário e se
 
 == Atualizar uma licença
 
-Se você estendeu uma licença do Copy and Sync adquirida da NetApp, a nova data de expiração não será atualizada automaticamente no Copy and Sync.  Você precisa adicionar a licença novamente para atualizar a data de expiração.  As licenças devem ser gerenciadas por meio do Copy and Sync ou do site aplicável e *não* por meio das assinaturas do NetApp Console.
+Se você estendeu uma licença do Copy and Sync adquirida da NetApp, a nova data de expiração não será atualizada automaticamente no Copy and Sync.  Você precisa adicionar a licença novamente para atualizar a data de expiração.  As licenças devem ser gerenciadas por meio do Copy and Sync ou do site aplicável e *não* por meio das assinaturas do NetApp Console .
 
 .Passos
-. No menu de navegação do NetApp Console, selecione *Mobilidade > Copiar e sincronizar*.
+. No menu de navegação do NetApp Console , selecione *Mobilidade > Copiar e sincronizar*.
 . Selecione *Licenciamento*.
 . Selecione *Adicionar licença* e adicione as informações necessárias:
 +

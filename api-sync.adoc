@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: api-sync.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
-summary: Os recursos de cópia e sincronização do NetApp disponíveis por meio da interface do usuário da Web também estão disponíveis por meio de APIs RESTful. 
+summary: Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio de APIs RESTful. 
 ---
-= APIs de cópia e sincronização da NetApp
+= APIs de NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Os recursos de cópia e sincronização do NetApp disponíveis por meio
 
 
 [role="lead"]
-Os recursos de cópia e sincronização do NetApp disponíveis por meio da interface do usuário da Web também estão disponíveis por meio da API RESTful.
+Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio da API RESTful.
 
 
 
 == Começar
 
-Para começar a usar a API Copy and Sync, você precisa obter um token de usuário e sua ID de conta do NetApp Console.  Você precisará adicionar o token e o ID da conta ao cabeçalho de autorização ao fazer chamadas de API.
+Para começar a usar a API Copy and Sync, você precisa obter um token de usuário e sua ID de conta do NetApp Console .  Você precisará adicionar o token e o ID da conta ao cabeçalho de autorização ao fazer chamadas de API.
 
 .Passos
 . Obtenha um token de usuário do NetApp Console.
@@ -43,7 +43,7 @@ Body:
 
 NOTE: Se estiver usando uma conta de e-mail pessoal sem ID de cliente, você pode usar o ID de cliente padrão "QC3AgHk6qdbmC7Yyr82ApBwaaJLwRrNO".
 
-. Obtenha o ID da sua conta do NetApp Console.
+. Obtenha o ID da sua conta do NetApp Console .
 +
 [source, http]
 ----

@@ -199,7 +199,7 @@ NOTE: Regex, ou expressões regulares, são diferentes de curingas ou expressõe
 Tamanho do arquivo:: Escolha sincronizar todos os arquivos, independentemente do tamanho, ou apenas os arquivos que estejam em um intervalo de tamanho específico.
 Data de modificação:: Escolha todos os arquivos, independentemente da data da última modificação, arquivos modificados após uma data específica, antes de uma data específica ou entre um intervalo de tempo.
 Data de criação:: Quando um servidor SMB é a origem, essa configuração permite sincronizar arquivos que foram criados após uma data específica, antes de uma data específica ou entre um intervalo de tempo específico.
-ACL - Lista de Controle de Acesso:: Copie somente ACLs, somente arquivos ou ACLs e arquivos de um servidor SMB habilitando uma configuração ao criar um relacionamento ou depois de criá-lo.
+ACL - Lista de Controle de Acesso:: Copie somente ACLs, somente arquivos ou ACLs e arquivos de um servidor SMB habilitando uma configuração ao criar um relacionamento ou depois de criar um relacionamento.
 
 
 . Selecione *Salvar configurações*.

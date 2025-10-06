@@ -30,7 +30,7 @@ A BlueXP copy and sync foi renomeada para NetApp Copy and Sync.
 
 === BlueXP agora é NetApp Console
 
-O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, de forma altamente segura e compatível.
+O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, que é altamente segura e compatível.
 
 Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de versão do NetApp Console"] .
 
@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === Correções de bugs
 
-Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A nova versão do data broker é 1.0.56.
+Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs. A nova versão do data broker é 1.0.56.
 
 
 
@@ -64,7 +64,7 @@ Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A
 
 === Correções de bugs
 
-Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A nova versão do data broker é 1.0.55.
+Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs. A nova versão do data broker é 1.0.55.
 
 
 
@@ -74,7 +74,7 @@ Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A
 
 === Correções de bugs
 
-Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A nova versão do data broker é 1.0.54.
+Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs. A nova versão do data broker é 1.0.54.
 
 
 
@@ -84,7 +84,7 @@ Atualizamos o NetApp Copy and Sync e o data broker para corrigir alguns bugs.  A
 
 === Correções de bugs
 
-Atualizamos o Copy and Sync e o data broker para corrigir alguns bugs.  A nova versão do data broker é 1.0.53.
+Atualizamos o Copy and Sync e o data broker para corrigir alguns bugs. A nova versão do data broker é 1.0.53.
 
 
 
@@ -94,7 +94,7 @@ Atualizamos o Copy and Sync e o data broker para corrigir alguns bugs.  A nova v
 
 === Correções de bugs
 
-O NetApp Copy and Sync foi atualizado para corrigir alguns bugs.  O corretor de dados também foi atualizado para aplicar atualizações de segurança.  A nova versão do data broker é 1.0.52.
+O NetApp Copy and Sync foi atualizado para corrigir alguns bugs.  O corretor de dados também foi atualizado para aplicar atualizações de segurança. A nova versão do data broker é 1.0.52.
 
 
 
@@ -144,7 +144,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-aws.html#creating
 
 === Atualização da versão do nó para corretores de dados
 
-Todos os novos corretores de dados agora usarão o nó versão 21.2.0.  Os corretores de dados que não são compatíveis com esta atualização, como o CentOS 7.0 e o Ubuntu Server 18.0, não funcionarão mais com o NetApp Copy and Sync.
+Todos os novos corretores de dados agora usarão o nó versão 21.2.0.  Os corretores de dados que não são compatíveis com esta atualização, como CentOS 7.0 e Ubuntu Server 18.0, não funcionarão mais com o NetApp Copy and Sync.
 
 
 
@@ -968,7 +968,7 @@ Quando um bucket do Google Cloud Storage é o alvo em um relacionamento de sincr
 
 * Padrão
 * Nearline
-* Linha fria
+* Linha Fria
 * Arquivo
 
 
@@ -1002,7 +1002,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 === O serviço autônomo de Cloud Sync foi descontinuado
 
-O serviço autônomo Cloud Sync foi desativado.  Agora você deve acessar o Cloud Sync diretamente do NetApp Console, onde todos os mesmos recursos e funcionalidades estão disponíveis.
+O serviço autônomo Cloud Sync foi desativado.  Agora você deve acessar o Cloud Sync diretamente do NetApp Console , onde todos os mesmos recursos e funcionalidades estão disponíveis.
 
 Depois de fazer login no NetApp Console, você pode alternar para a guia Sincronizar na parte superior e visualizar seus relacionamentos, como antes.
 

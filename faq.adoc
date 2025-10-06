@@ -24,7 +24,7 @@ As perguntas a seguir estão relacionadas aos primeiros passos com o NetApp Copy
 
 
 
-=== Como funciona o NetApp Copy and Sync?
+=== Como funciona o NetApp Copy and Sync ?
 
 O Copy and Sync usa o software NetApp Data Broker para sincronizar dados de uma origem para um destino (isso é chamado de _relacionamento de sincronização_).
 
@@ -131,7 +131,7 @@ Sim, você pode escolher uma classe de armazenamento S3 específica quando o AWS
 
 
 
-=== E quanto às camadas de armazenamento para o armazenamento de Blobs do Azure?
+=== E quanto aos níveis de armazenamento para o armazenamento de Blobs do Azure?
 
 Você pode escolher uma camada específica de armazenamento de Blobs do Azure quando um contêiner de Blobs for o destino:
 
@@ -147,7 +147,7 @@ Sim, você pode escolher uma classe de armazenamento específica quando um bucke
 
 * Padrão
 * Nearline
-* Linha fria
+* Linha Fria
 * Arquivo
 
 

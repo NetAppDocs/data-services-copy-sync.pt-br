@@ -63,7 +63,7 @@ O NetApp Copy and Sync orienta você no processo de instalação quando você cr
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"]Crie seu primeiro relacionamento de sincronização
 [role="quick-margin-para"]
-Entrar para https://console.netapp.com/["o console NetApp"^] , selecione *Sincronizar* e arraste e solte suas seleções para a origem e o destino.  Siga as instruções para concluir a configuração. link:task-creating-relationships.html["Saber mais"] .
+Entrar para https://console.netapp.com/["o NetApp Console"^] , selecione *Sincronizar* e arraste e solte suas seleções para a origem e o destino.  Siga as instruções para concluir a configuração. link:task-creating-relationships.html["Saber mais"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"]Pague pelos seus relacionamentos de sincronização após o término do seu teste gratuito
 [role="quick-margin-para"]

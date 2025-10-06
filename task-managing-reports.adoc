@@ -33,7 +33,7 @@ Os caminhos (origem ou destino) em cada um dos seus relacionamentos de sincroniz
 . Na coluna *Ações de relatórios*, vá para um caminho específico e selecione *Criar* ou selecione o menu de ações e selecione *Criar novo*.
 . Quando o relatório estiver pronto, selecione o menu de ação e selecione *Exibir*.
 +
-Aqui está um relatório de exemplo para um caminho de sistema de arquivos.
+Aqui está um exemplo de relatório para um caminho de sistema de arquivos.
 
 +
 image:screenshot_sync_report.gif["Um relatório que mostra a quantidade de itens de sincronização, tamanho do arquivo, máximos, tempo de acesso, tempo de alteração e tempo de modificação."]

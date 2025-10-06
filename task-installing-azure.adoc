@@ -14,7 +14,7 @@ summary: Ao criar um novo data broker, escolha a opção Azure Data Broker para 
 
 
 [role="lead"]
-Ao criar um novo grupo de corretores de dados para o NetApp Copy and Sync, escolha o Microsoft Azure para implantar o software do corretor de dados em uma nova máquina virtual em uma VNet.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
+Ao criar um novo grupo de data brokers para o NetApp Copy and Sync, escolha o Microsoft Azure para implantar o software de data broker em uma nova máquina virtual em uma VNet.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
 
 Você também tem a opção de instalar o data broker em um host Linux existente na nuvem ou em suas instalações. link:task-installing-linux.html["Saber mais"] .
 

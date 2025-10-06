@@ -14,7 +14,7 @@ summary: Ao criar um novo data broker, escolha a opção Google Cloud Data Broke
 
 
 [role="lead"]
-Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha o Google Cloud Platform para implantar o software de data broker em uma nova instância de máquina virtual em uma VPC do Google Cloud.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
+Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha Google Cloud Platform para implantar o software de data broker em uma nova instância de máquina virtual em um Google Cloud VPC.  O NetApp Copy and Sync orienta você durante o processo de instalação, mas os requisitos e etapas são repetidos nesta página para ajudar você a se preparar para a instalação.
 
 Você também tem a opção de instalar o data broker em um host Linux existente na nuvem ou em suas instalações. link:task-installing-linux.html["Saber mais"] .
 

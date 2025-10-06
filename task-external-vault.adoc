@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-external-vault.html 
 keywords: hashicorp, vault, credentials, secrets, API 
-summary: Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync.  Uma alternativa é configurar o corretor de dados para acessar as credenciais diretamente de um HashiCorp Vault externo. 
+summary: Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync .  Uma alternativa é configurar o corretor de dados para acessar as credenciais diretamente de um HashiCorp Vault externo. 
 ---
 = Configurar um grupo de corretores de dados para usar um HashiCorp Vault externo no NetApp Copy and Sync
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Ao criar um relacionamento de sincronização que requer credenciais do
 
 
 [role="lead"]
-Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync.  Uma alternativa é configurar o grupo de corretores de dados para acessar as credenciais (ou _segredos_) diretamente de um HashiCorp Vault externo.
+Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync .  Uma alternativa é configurar o grupo de corretores de dados para acessar as credenciais (ou _segredos_) diretamente de um HashiCorp Vault externo.
 
 Esse recurso é suportado pela API Copiar e Sincronizar com relacionamentos de sincronização que exigem credenciais do Amazon S3, Azure ou Google Cloud.
 
@@ -229,8 +229,8 @@ x-netapp-external-request-id-src: request ID as part of path for source credenti
 x-netapp-external-request-id-trg: request ID as part of path for target credentials
 Body: post relationship v2 body
 ....
-* Para obter um token de usuário e sua ID de conta do NetApp Console,link:api-sync.html["consulte esta página na documentação"] .
-* Para construir um corpo para seu relacionamento pós-namoro, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["consulte a chamada da API relationships-v2"^] .
+* Para obter um token de usuário e sua ID de conta do NetApp Console ,link:api-sync.html["consulte esta página na documentação"] .
+* Para construir um corpo para seu relacionamento pós-relacionamento, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["consulte a chamada da API relationships-v2"^] .
 
 
 
