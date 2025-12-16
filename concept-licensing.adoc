@@ -24,6 +24,11 @@ As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplic�
 
 Assinar o Copy and Sync da AWS ou do Azure permite que você pague por hora ou anualmente. link:task-licensing.html["Você pode assinar através da AWS ou do Azure"] , dependendo de onde você deseja ser cobrado.
 
+[NOTE]
+====
+O recurso Copiar e Sincronizar é compatível apenas com assinaturas do Marketplace da **AWS** e do **Azure**. Assinaturas do Google Cloud Marketplace não são compatíveis com o recurso Copiar e Sincronizar.
+
+====
 
 
 === Assinatura por hora
