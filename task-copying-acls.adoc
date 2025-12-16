@@ -63,6 +63,11 @@ image:screenshot-sync-tags-metadata.png["Uma captura de tela da sexta etapa do a
 . Selecione *Salvar configurações*.
 
 
+[NOTE]
+====
+A função Copiar e Sincronizar preserva as ACLs (permissões) do SMB, mas não copia a propriedade de arquivos ou pastas.  A propriedade não está incluída na operação de transferência da ACL do SMB.
+
+====
 .Resultado
 Ao sincronizar dados, o Copiar e Sincronizar preserva as ACLs entre a origem e o destino.
 
@@ -72,6 +77,11 @@ Ao sincronizar dados, o Copiar e Sincronizar preserva as ACLs entre a origem e o
 
 Você pode preservar manualmente as ACLs entre compartilhamentos SMB usando o comando robocopy do Windows.
 
+[NOTE]
+====
+Se você precisar preservar a propriedade (Proprietário e Grupo) além das ACLs, poderá usar o `robocopy` comando.  Usando o `/copyall` A sinalização inclui cópias de ACLs, informações de propriedade e auditoria.
+
+====
 .Passos
 . Identifique um host Windows que tenha acesso total aos dois compartilhamentos SMB.
 . Se algum dos pontos de extremidade exigir autenticação, use o comando *net use* para se conectar aos pontos de extremidade do host Windows.
