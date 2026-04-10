@@ -20,7 +20,7 @@ Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha a op�
 
 == Requisitos do host Linux
 
-* *Compatibilidade com Node.js*: v21.2.0
+* *Compatibilidade com Node.js*: v25.x
 * *Sistema operacional*:
 +
 ** CentOS 8.0 e 8.5
@@ -35,7 +35,7 @@ O CentOS Stream não é suportado.
 O comando `yum update` deve ser executado no host antes de instalar o data broker.
 
 +
-Um sistema Red Hat Enterprise Linux deve ser registrado no Red Hat Subscription Management.  Se não estiver registrado, o sistema não poderá acessar repositórios para atualizar o software de terceiros necessário durante a instalação.
+Um sistema Red Hat Enterprise Linux deve ser registrado no Red Hat Subscription Management. Se não estiver registrado, o sistema não poderá acessar os repositórios para atualizar o software de terceiros necessário durante a instalação.
 
 
 
@@ -121,11 +121,11 @@ Você pode instalar um data broker em um host Linux ao criar um relacionamento d
 .Passos
 . link:task-login-copyandsync.html["Efetue login para copiar e sincronizar"] .
 . Selecione *Criar nova sincronização*.
-. Na página *Definir relacionamento de sincronização*, escolha uma origem e um destino e selecione *Continuar*.
+. Na página *Definir relação de sincronização*, escolha uma origem e um destino e selecione *Continuar*.
 +
 Conclua as etapas até chegar à página *Data Broker Group*.
 
-. Na página *Grupo de Data Broker*, selecione *Criar Data Broker* e depois selecione *On-Prem Data Broker*.
+. Na página *Data Broker Group*, selecione *Create Data Broker* e, em seguida, selecione *On-Prem Data Broker*.
 +
 image:screenshot-on-prem.png["Uma captura de tela da página do Data Broker que permite escolher entre um data broker da AWS, Azure, Google Cloud e On-Prem."]
 
@@ -133,13 +133,13 @@ image:screenshot-on-prem.png["Uma captura de tela da página do Data Broker que 
 
 NOTE: Embora a opção esteja rotulada como *_On-Prem_ Data Broker*, ela se aplica a um host Linux em suas instalações ou na nuvem.
 
-. Digite um nome para o corretor de dados e selecione *Continuar*.
+. Insira um nome para o corretor de dados e selecione *Continuar*.
 +
-A página de instruções carrega em breve.  Você precisará seguir estas instruções — elas incluem um link exclusivo para baixar o instalador.
+Após o carregamento da página de instruções, siga as instruções que incluem um link exclusivo para baixar o instalador.
 
 . Na página de instruções:
 +
-.. Selecione se deseja habilitar o acesso ao *AWS*, *Google Cloud* ou ambos.
+.. Escolha habilitar o acesso à *AWS*, ao *Google Cloud* ou a ambos.
 .. Selecione uma opção de instalação: *Sem proxy*, *Usar servidor proxy* ou *Usar servidor proxy com autenticação*.
 +
 
