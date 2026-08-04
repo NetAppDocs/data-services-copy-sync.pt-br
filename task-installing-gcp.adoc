@@ -20,18 +20,21 @@ Você também tem a opção de instalar o data broker em um host Linux existente
 
 
 
+[[supported-google-cloud-regions]]
 == Regiões do Google Cloud com suporte
 
 Todas as regiões são suportadas.
 
 
 
+[[root-privileges]]
 == Privilégios de root
 
 O software do data broker é executado automaticamente como root no host Linux.  Executar como root é um requisito para operações do data broker.  Por exemplo, para montar ações.
 
 
 
+[[networking-requirements]]
 == Requisitos de rede
 
 * O corretor de dados precisa de uma conexão de saída com a Internet para poder consultar o Copy and Sync em busca de tarefas pela porta 443.
@@ -46,6 +49,7 @@ Se você precisar limitar a conectividade de saída, consultelink:reference-netw
 
 
 
+[[permissions-required-to-deploy-the-data-broker-in-google-cloud]]
 == Permissões necessárias para implantar o data broker no Google Cloud
 
 Certifique-se de que o usuário do Google Cloud que implanta o data broker tenha as seguintes permissões:
@@ -61,6 +65,7 @@ Certifique-se de que o usuário do Google Cloud que implanta o data broker tenha
 ----
 
 
+[[permissions-required-for-the-service-account]]
 == Permissões necessárias para a conta de serviço
 
 Ao implantar o data broker, você precisa selecionar uma conta de serviço que tenha as seguintes permissões:
@@ -101,6 +106,7 @@ Observações:
 
 
 
+[[create-the-data-broker]]
 == Crie o corretor de dados
 
 Existem algumas maneiras de criar um novo corretor de dados.  Estas etapas descrevem como instalar um data broker no Google Cloud ao criar um relacionamento de sincronização.
@@ -144,6 +150,7 @@ Você implantou um corretor de dados no Google Cloud e criou um novo relacioname
 
 
 
+[[provide-permissions-to-use-buckets-in-other-google-cloud-projects]]
 == Conceder permissões para usar buckets em outros projetos do Google Cloud
 
 Quando você cria um relacionamento de sincronização e escolhe o Google Cloud Storage como origem ou destino, Copiar e sincronizar permite que você escolha entre os buckets que a conta de serviço do data broker tem permissão para usar.  Por padrão, isso inclui os buckets que estão no _mesmo_ projeto que a conta de serviço do data broker.  Mas você pode escolher buckets de _outros_ projetos se fornecer as permissões necessárias.
@@ -163,6 +170,7 @@ Ao configurar um relacionamento de sincronização, agora você pode escolher es
 
 
 
+[[details-about-the-data-broker-vm-instance]]
 == Detalhes sobre a instância da VM do data broker
 
 O Copy and Sync cria um data broker no Google Cloud usando a seguinte configuração.

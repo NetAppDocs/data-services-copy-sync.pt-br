@@ -23,6 +23,7 @@ O NetApp Copy and Sync pode copiar listas de controle de acesso (ACLs) entre com
 
 
 
+[[set-up-copy-and-sync-to-copy-acls]]
 == Configurar cópia e sincronização para copiar ACLs
 
 Copie ACLs entre compartilhamentos SMB e entre compartilhamentos SMB e armazenamento de objetos habilitando uma configuração ao criar um relacionamento ou depois de criar um relacionamento.
@@ -73,6 +74,7 @@ Ao sincronizar dados, o Copiar e Sincronizar preserva as ACLs entre a origem e o
 
 
 
+[[manually-copy-acls-between-smb-shares]]
 == Copiar manualmente ACLs entre compartilhamentos SMB
 
 Você pode preservar manualmente as ACLs entre compartilhamentos SMB usando o comando robocopy do Windows.

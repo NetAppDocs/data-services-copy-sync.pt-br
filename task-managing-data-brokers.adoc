@@ -18,12 +18,14 @@ Um grupo de corretores de dados no NetApp Copy and Sync sincroniza dados de um l
 
 
 
+[[how-data-broker-groups-work]]
 == Como funcionam os grupos de corretores de dados
 
 Um grupo de corretores de dados pode incluir um ou mais corretores de dados.  Agrupar corretores de dados pode ajudar a melhorar o desempenho dos relacionamentos de sincronização.
 
 
 
+[[groups-can-manage-several-relationships]]
 === Os grupos podem gerenciar vários relacionamentos
 
 Um grupo de corretores de dados pode gerenciar um ou mais relacionamentos de sincronização por vez.
@@ -39,12 +41,14 @@ Você deseja acelerar o desempenho do relacionamento 1, então adiciona um novo 
 
 
 
+[[number-of-data-brokers-in-a-group]]
 === Número de corretores de dados em um grupo
 
 Em muitos casos, um único corretor de dados pode atender aos requisitos de desempenho para um relacionamento de sincronização.  Caso contrário, você pode acelerar o desempenho da sincronização adicionando corretores de dados adicionais ao grupo.  Mas primeiro você deve verificar outros fatores que podem afetar o desempenho da sincronização. link:faq.html#how-many-data-brokers-are-required-in-a-group["Saiba mais sobre como determinar quando vários corretores de dados são necessários"] .
 
 
 
+[[security-recommendations]]
 == Recomendações de segurança
 
 Para garantir a segurança da sua máquina de corretagem de dados, a NetApp recomenda o seguinte:
@@ -59,6 +63,7 @@ Essas recomendações de segurança podem ajudar a evitar conexões não autoriz
 
 
 
+[[add-a-new-data-broker-to-a-group]]
 == Adicionar um novo corretor de dados a um grupo
 
 Existem várias maneiras de criar um novo corretor de dados:
@@ -118,6 +123,7 @@ Para obter ajuda, consulte as seguintes páginas:
 
 
 
+[[edit-a-groups-name]]
 == Editar o nome de um grupo
 
 Altere o nome de um grupo de corretores de dados a qualquer momento.
@@ -137,6 +143,7 @@ Copiar e sincronizar atualiza o nome do grupo do corretor de dados.
 
 
 
+[[set-up-a-unified-configuration]]
 == Configurar uma configuração unificada
 
 Se um relacionamento de sincronização encontrar erros durante o processo de sincronização, unificar a simultaneidade do grupo de corretores de dados pode ajudar a diminuir o número de erros de sincronização.  Esteja ciente de que alterações na configuração do grupo podem afetar o desempenho, tornando a transferência mais lenta.
@@ -166,6 +173,7 @@ Observe o seguinte:
 
 
 
+[[move-data-brokers-between-groups]]
 == Mover corretores de dados entre grupos
 
 Mova um corretor de dados de um grupo para outro se precisar acelerar o desempenho do grupo de corretores de dados de destino.
@@ -195,6 +203,7 @@ Copiar e sincronizar move o corretor de dados para um grupo de corretores de dad
 
 
 
+[[update-proxy-configuration]]
 == Atualizar configuração de proxy
 
 Atualize a configuração de proxy para um corretor de dados adicionando detalhes sobre uma nova configuração de proxy ou editando a configuração de proxy existente.
@@ -213,6 +222,7 @@ O Copy and Sync atualiza o data broker para usar a configuração de proxy para 
 
 
 
+[[view-a-data-brokers-configuration]]
 == Visualizar a configuração de um corretor de dados
 
 Talvez você queira visualizar detalhes sobre um corretor de dados para identificar coisas como seu nome de host, endereço IP, CPU e RAM disponíveis e muito mais.
@@ -242,6 +252,7 @@ image:screenshot_sync_data_broker_details.gif["Uma captura de tela de informaç�
 
 
 
+[[address-issues-with-a-data-broker]]
 == Resolva problemas com um corretor de dados
 
 Copiar e sincronizar exibe um status para cada corretor de dados que pode ajudar você a solucionar problemas.
@@ -261,6 +272,7 @@ Por exemplo, talvez seja necessário simplesmente reiniciar o data broker se ele
 
 
 
+[[remove-a-data-broker-from-a-group]]
 == Remover um corretor de dados de um grupo
 
 Você pode remover um corretor de dados de um grupo se ele não for mais necessário ou se a implantação inicial falhar.  Esta ação apenas exclui o data broker dos registros do Copy and Sync.  Você precisará excluir manualmente o data broker e quaisquer recursos adicionais da nuvem.
@@ -286,6 +298,7 @@ Copiar e sincronizar remove o corretor de dados do grupo.
 
 
 
+[[delete-a-data-broker-group]]
 == Excluir um grupo de corretores de dados
 
 Se um grupo de corretores de dados não gerenciar mais nenhum relacionamento de sincronização, você poderá excluir o grupo, o que removerá todos os corretores de dados do Copy and Sync.

@@ -16,10 +16,11 @@ summary: Crie e visualize relatórios para obter informações que você pode us
 [role="lead"]
 Crie e visualize relatórios no NetApp Copy and Sync para obter informações que você pode usar com a ajuda da equipe da NetApp para ajustar a configuração de um data broker e melhorar o desempenho.
 
-Cada relatório fornece detalhes detalhados sobre um caminho em um relacionamento de sincronização.  Incluirá quantos diretórios, arquivos e links simbólicos existem, a distribuição do tamanho dos arquivos, a profundidade e a largura dos diretórios, o tempo de modificação e o tempo de acesso.  Isso difere das estatísticas de sincronização, que estão disponíveis no painel após https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["criando e concluindo com sucesso uma sincronização"] .
+Cada relatório fornece detalhes aprofundados sobre um caminho em uma relação de sincronização. Ele inclui quantos diretórios, arquivos e links simbólicos existem, a distribuição do tamanho dos arquivos, quão profundos e largos são os diretórios, o tempo de modificação e o tempo de acesso. Isso difere das estatísticas de sincronização, que estão disponíveis no painel após link:task-creating-relationships.html["criando e concluindo com sucesso uma sincronização"].
 
 
 
+[[create-reports]]
 == Criar relatórios
 
 Cada vez que você cria um relatório, o Copiar e Sincronizar verifica o caminho e compila os detalhes em um relatório.
@@ -48,6 +49,7 @@ image:screenshot_sync_report_object.gif["Um relatório que mostra o número de i
 
 
 
+[[download-reports]]
 == Baixar relatórios
 
 Você pode baixar um relatório em PDF para visualizá-lo offline ou compartilhá-lo.
@@ -64,6 +66,7 @@ image:screenshot-sync-download-report.png["Uma captura de tela da opção Baixar
 
 
 
+[[view-report-errors]]
 == Exibir erros do relatório
 
 A tabela Caminhos identifica se há algum erro presente no relatório mais recente.  Um erro identifica um problema que o Copy and Sync enfrentou ao escanear o caminho.
@@ -88,6 +91,7 @@ Depois de resolver o problema, o erro não deverá aparecer na próxima vez que 
 
 
 
+[[delete-reports]]
 == Excluir relatórios
 
 Você pode excluir um relatório se ele contiver um erro que você corrigiu ou se o relatório estiver relacionado a um relacionamento de sincronização que você removeu.

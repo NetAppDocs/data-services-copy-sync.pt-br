@@ -20,18 +20,21 @@ Você também tem a opção de instalar o data broker em um host Linux existente
 
 
 
+[[supported-aws-regions]]
 == Regiões AWS suportadas
 
 Todas as regiões são suportadas, exceto as regiões da China.
 
 
 
+[[root-privileges]]
 == Privilégios de root
 
 O software do data broker é executado automaticamente como root no host Linux.  Executar como root é um requisito para operações do data broker.  Por exemplo, para montar ações.
 
 
 
+[[networking-requirements]]
 == Requisitos de rede
 
 * O corretor de dados precisa de uma conexão de saída com a Internet para poder consultar o Copy and Sync em busca de tarefas pela porta 443.
@@ -46,12 +49,14 @@ Se você precisar limitar a conectividade de saída, consultelink:reference-netw
 
 
 
+[[permissions-required-to-deploy-the-data-broker-in-aws]]
 == Permissões necessárias para implantar o data broker na AWS
 
 A conta de usuário da AWS que você usa para implantar o data broker deve ter as permissões incluídas em https://s3.amazonaws.com/metadata.datafabric.io/docs/aws_iam_policy.json["esta política fornecida pela NetApp"^] .
 
 
 
+[[iamrequirements-to-use-your-own-iam-role-with-the-aws-data-broker]]
 == [[iam]]Requisitos para usar sua própria função do IAM com o AWS Data Broker
 
 Quando o Copy and Sync implanta o data broker, ele cria uma função do IAM para a instância do data broker. Você pode implantar o data broker usando sua própria função do IAM, se preferir.  Você pode usar esta opção se sua organização tiver políticas de segurança rígidas.
@@ -66,6 +71,7 @@ Siga as etapas abaixo para especificar a função do IAM ao implantar o data bro
 
 
 
+[[create-the-data-broker]]
 == Crie o corretor de dados
 
 Existem algumas maneiras de criar um novo corretor de dados.  Estas etapas descrevem como instalar um data broker na AWS ao criar um relacionamento de sincronização.
@@ -118,6 +124,7 @@ Você implantou um data broker na AWS e criou um novo relacionamento de sincroni
 
 
 
+[[details-about-the-data-broker-instance]]
 == Detalhes sobre a instância do data broker
 
 O Copy and Sync cria um data broker na AWS usando a seguinte configuração.

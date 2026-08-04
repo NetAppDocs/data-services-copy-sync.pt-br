@@ -18,6 +18,7 @@ Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha a op�
 
 
 
+[[linux-host-requirements]]
 == Requisitos do host Linux
 
 * *Compatibilidade com Node.js*: v25.x
@@ -50,12 +51,14 @@ O SELinux aplica uma política que bloqueia atualizações de software do data b
 
 
 
+[[root-privileges]]
 == Privilégios de root
 
 O software do data broker é executado automaticamente como root no host Linux.  Executar como root é um requisito para operações do data broker.  Por exemplo, para montar ações.
 
 
 
+[[networking-requirements]]
 == Requisitos de rede
 
 * O host Linux deve ter uma conexão com a origem e o destino.
@@ -66,6 +69,7 @@ O software do data broker é executado automaticamente como root no host Linux. 
 
 
 
+[[enable-access-to-aws]]
 == Habilitar acesso à AWS
 
 Se você planeja usar o data broker com um relacionamento de sincronização que inclui um bucket S3, você deve preparar o host Linux para acesso à AWS. Ao instalar o data broker, você precisará fornecer chaves da AWS para um usuário do AWS que tenha acesso programático e permissões específicas.
@@ -86,6 +90,7 @@ Certifique-se de copiar as chaves da AWS porque você precisa especificá-las ao
 
 
 
+[[enable-access-to-google-cloud]]
 == Habilitar acesso ao Google Cloud
 
 Se você planeja usar o data broker com um relacionamento de sincronização que inclui um bucket do Google Cloud Storage, você deve preparar o host Linux para acesso ao Google Cloud. Ao instalar o data broker, você precisará fornecer uma chave para uma conta de serviço que tenha permissões específicas.
@@ -108,12 +113,14 @@ NOTE: Quando você cria uma chave, o arquivo é gerado e baixado para sua máqui
 
 
 
+[[enable-access-to-microsoft-azure]]
 == Habilitar acesso ao Microsoft Azure
 
 O acesso ao Azure é definido por relacionamento, fornecendo uma conta de armazenamento e uma sequência de conexão no assistente de Sincronização de Relacionamento.
 
 
 
+[[install-the-data-broker]]
 == Instalar o corretor de dados
 
 Você pode instalar um data broker em um host Linux ao criar um relacionamento de sincronização.

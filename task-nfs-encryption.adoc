@@ -20,6 +20,7 @@ Por exemplo, você pode querer sincronizar dados entre dois servidores NFS que e
 
 
 
+[[how-data-in-flight-encryption-works]]
 == Como funciona a criptografia de dados em trânsito
 
 A criptografia de dados em trânsito criptografa dados NFS quando eles são enviados pela rede entre dois corretores de dados.  A imagem a seguir mostra um relacionamento entre dois servidores NFS e dois corretores de dados:
@@ -44,6 +45,7 @@ Se preferir sincronizar dados com mais frequência,link:task-managing-relationsh
 
 
 
+[[supported-nfs-versions]]
 == Versões NFS suportadas
 
 * Para servidores NFS, a criptografia de dados em trânsito é suportada com as versões 3, 4.0, 4.1 e 4.2 do NFS.
@@ -52,12 +54,14 @@ Se preferir sincronizar dados com mais frequência,link:task-managing-relationsh
 
 
 
+[[proxy-server-limitation]]
 == Limitação do servidor proxy
 
 Se você criar um relacionamento de sincronização criptografado, os dados criptografados serão enviados por HTTPS e não poderão ser roteados por meio de um servidor proxy.
 
 
 
+[[what-youll-need-to-get-started]]
 == O que você precisa para começar
 
 Certifique-se de ter o seguinte:
@@ -85,6 +89,7 @@ Se você ainda não implantou um corretor de dados, revise os requisitos do corr
 
 
 
+[[sync-nfs-data-using-data-in-flight-encryption]]
 == Sincronizar dados NFS usando criptografia de dados em trânsito
 
 Crie um novo relacionamento de sincronização entre dois servidores NFS ou entre o Azure NetApp Files, habilite a opção de criptografia em andamento e siga as instruções.

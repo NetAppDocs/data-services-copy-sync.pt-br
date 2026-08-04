@@ -34,8 +34,8 @@ Se você quiser criar relacionamentos de sincronização para qualquer um dos se
 Um agente de console é necessário para o Cloud Volumes ONTAP, clusters ONTAP locais e Amazon FSx for ONTAP.
 
 [role="quick-margin-list"]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Aprenda como começar a usar o NetApp Console"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["Aprenda como começar a usar o NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"]Prepare sua fonte e alvo

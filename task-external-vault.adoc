@@ -32,6 +32,7 @@ Agora que tudo está configurado, você pode enviar uma chamada de API para cria
 
 
 
+[[prepare-the-vault]]
 == Prepare o cofre
 
 Você precisará fornecer ao Copy and Sync a URL dos segredos no seu cofre.  Prepare o cofre configurando essas URLs.  Você precisa configurar URLs para as credenciais de cada origem e destino nos relacionamentos de sincronização que planeja criar.
@@ -48,6 +49,7 @@ Créditos:: A URL deve terminar com _Creds_.
 
 
 
+[[examples]]
 === Exemplos
 
 Os exemplos a seguir mostram URLs para segredos.
@@ -68,6 +70,7 @@ O caminho do prefixo é _/my-path/all-secrets/_, o ID da solicitação é _n32hc
 
 
 
+[[prepare-the-data-broker-group]]
 == Preparar o grupo de corretores de dados
 
 Prepare o grupo de corretores de dados para buscar credenciais do cofre externo modificando o arquivo de configuração local para cada corretor de dados no grupo.
@@ -152,6 +155,7 @@ Espaço de nomes::
 
 
 
+[[example-for-aws-role-authentication]]
 === Exemplo de autenticação aws-role
 
 [source, json]
@@ -173,6 +177,7 @@ Espaço de nomes::
 ----
 
 
+[[example-for-gcp-iam-authentication]]
 === Exemplo de autenticação gcp-iam
 
 [source, json]
@@ -202,6 +207,7 @@ Espaço de nomes::
 ----
 
 
+[[set-up-permissions-when-using-gcp-iam-authentication]]
 === Configurar permissões ao usar a autenticação gcp-iam
 
 Se você estiver usando o método de autenticação _gcp-iam_, o data broker deverá ter a seguinte permissão do GCP:
@@ -214,6 +220,7 @@ link:task-installing-gcp.html#permissions-required-for-the-service-account["Saib
 
 
 
+[[creating-a-new-sync-relationship-using-secrets-from-the-vault]]
 == Criando um novo relacionamento de sincronização usando segredos do cofre
 
 Agora que tudo está configurado, você pode enviar uma chamada de API para criar um relacionamento de sincronização que usa seu cofre para obter os segredos.
@@ -235,6 +242,7 @@ Body: post relationship v2 body
 
 
 
+[[example]]
 === Exemplo
 
 Exemplo para a solicitação POST:

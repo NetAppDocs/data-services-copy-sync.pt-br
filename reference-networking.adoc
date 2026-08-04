@@ -18,12 +18,14 @@ A rede para o NetApp Copy and Sync inclui conectividade entre o grupo de correto
 
 
 
+[[data-broker-location]]
 == Localização do corretor de dados
 
 Um grupo de corretores de dados consiste em um ou mais corretores de dados instalados na nuvem ou em suas instalações.
 
 
 
+[[data-broker-in-the-cloud]]
 === Corretor de dados na nuvem
 
 A imagem a seguir mostra um corretor de dados em execução na nuvem, na AWS, no Google Cloud ou no Azure.  A origem e o destino podem estar em qualquer local, desde que haja uma conexão com o corretor de dados.  Por exemplo, você pode ter uma conexão VPN do seu data center para seu provedor de nuvem.
@@ -35,6 +37,7 @@ image:diagram_networking_cloud2.png["Um diagrama que mostra o Copy and Sync, o c
 
 
 
+[[data-broker-on-your-premises]]
 === Corretor de dados em suas instalações
 
 A imagem a seguir mostra o data broker em execução no local em um data center.  Novamente, a origem e o destino podem estar em qualquer local, desde que haja uma conexão com o corretor de dados.
@@ -43,6 +46,7 @@ image:diagram_networking_onprem.png["Um diagrama que mostra o Copy and Sync, o d
 
 
 
+[[networking-requirements]]
 == Requisitos de rede
 
 * A origem e o destino devem ter uma conexão de rede com o grupo de corretores de dados.
@@ -55,12 +59,14 @@ Por exemplo, se um servidor NFS estiver no seu data center e um data broker esti
 
 
 
+[[networking-endpoints]]
 == Pontos de extremidade de rede
 
 O NetApp Data Broker requer acesso de saída à Internet pela porta 443 para se comunicar com o Copy and Sync e para entrar em contato com alguns outros serviços e repositórios.  Seu navegador local também requer acesso a endpoints para determinadas ações.  Se você precisar limitar a conectividade de saída, consulte a seguinte lista de endpoints ao configurar seu firewall para tráfego de saída.
 
 
 
+[[data-broker-endpoints]]
 === Pontos de extremidade do corretor de dados
 
 Um corretor de dados contata os seguintes terminais:
@@ -116,6 +122,7 @@ Um corretor de dados contata os seguintes terminais:
 |===
 
 
+[[web-browser-endpoints]]
 === Pontos finais do navegador da Web
 
 Seu navegador precisa acessar o seguinte endpoint para baixar logs para fins de solução de problemas:
