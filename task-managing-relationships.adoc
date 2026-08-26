@@ -134,7 +134,17 @@ image:screenshot_sync_settings.png["Uma captura de tela que mostra as configura�
 [[deleteonsource]] Aqui está uma breve descrição de cada configuração:
 
 +
-Agendar:: Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização.  Você pode agendar um relacionamento para sincronizar dados a cada 1 minuto.
+Agendar:: Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização. Você pode programar um relacionamento para sincronizar dados a cada 1 minuto. As programações também podem ser definidas com frequência horária e diária.
++
+--
+
+IMPORTANT: Ao configurar o agendamento, você deve inserir um valor para quando *a próxima sincronização será iniciada automaticamente*. O Copy and Sync usa *UTC*, não a hora local. Planeje-se de acordo ao definir o horário agendado.
+
+--
+
+
+
+
 Tempo limite de sincronização:: Defina se o Copiar e Sincronizar deve cancelar uma sincronização de dados se a sincronização não for concluída no número especificado de minutos, horas ou dias.
 Notificações:: Permite que você escolha se deseja receber notificações de cópia e sincronização no Centro de notificações do NetApp Console.  Você pode habilitar notificações para sincronizações de dados bem-sucedidas, sincronizações de dados com falha e sincronizações de dados canceladas.
 +
@@ -150,8 +160,8 @@ Mesmo se você desmarcar esses atributos, o Copiar e Sincronizar ainda comparar�
 
 Você pode escolher habilitar ou desabilitar Copiar e Sincronizar comparando os seguintes atributos:
 
-** *mtime*: A última hora de modificação de um arquivo.  Este atributo não é válido para diretórios.
-** *uid*, *gid* e *mode*: sinalizadores de permissão para Linux.
+* *mtime*: A última hora de modificação de um arquivo.  Este atributo não é válido para diretórios.
+* *uid*, *gid* e *mode*: sinalizadores de permissão para Linux.
 
 
 --
@@ -203,9 +213,12 @@ Tamanho do arquivo:: Escolha sincronizar todos os arquivos, independentemente do
 Data de modificação:: Escolha todos os arquivos, independentemente da data da última modificação, arquivos modificados após uma data específica, antes de uma data específica ou entre um intervalo de tempo.
 Data de criação:: Quando um servidor SMB é a origem, essa configuração permite sincronizar arquivos que foram criados após uma data específica, antes de uma data específica ou entre um intervalo de tempo específico.
 ACL - Lista de Controle de Acesso:: Copie somente ACLs, somente arquivos ou ACLs e arquivos de um servidor SMB habilitando uma configuração ao criar um relacionamento ou depois de criar um relacionamento.
-
-
++
+--
 . Selecione *Salvar configurações*.
+
+
+--
 
 
 .Resultado

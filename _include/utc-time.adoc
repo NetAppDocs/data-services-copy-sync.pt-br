@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+IMPORTANT: Ao configurar o agendamento, você deve inserir um valor para quando *a próxima sincronização será iniciada automaticamente*. O Copy and Sync usa *UTC*, não a hora local. Planeje-se de acordo ao definir o horário agendado.

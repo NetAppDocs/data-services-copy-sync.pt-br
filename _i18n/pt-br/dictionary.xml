@@ -639,7 +639,6 @@
   <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[settings]]Na página *Configurações*, defina como os arquivos e pastas de origem são sincronizados e mantidos no local de destino:</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">Agendar</block>
-  <block id="3e8e8a2afdd515355f098433677b9baa" category="list-text">Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização.  Você pode agendar um relacionamento para sincronizar dados a cada 1 minuto.</block>
   <block id="64b10e9eb890594a5a1756353aca634b" category="list-text">Tempo limite de sincronização</block>
   <block id="3231a933fa5fac58c16e6d443f352009" category="list-text">Defina se o Copiar e Sincronizar deve cancelar uma sincronização de dados se a sincronização não for concluída no número especificado de minutos, horas ou dias.</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="list-text">Notificações</block>
@@ -1985,4 +1984,6 @@
   <block id="23239688169f4a4cc657d5ef5443f34b" category="paragraph"><block ref="23239688169f4a4cc657d5ef5443f34b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7bed8c71bfbfa7b7847f7029d0d74ccc" category="paragraph"><block ref="7bed8c71bfbfa7b7847f7029d0d74ccc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
+  <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">Ao configurar o agendamento, você deve inserir um valor para quando *a próxima sincronização será iniciada automaticamente*. O Copy and Sync usa *UTC*, não a hora local. Planeje-se de acordo ao definir o horário agendado.</block>
+  <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização. Você pode programar um relacionamento para sincronizar dados a cada 1 minuto. As programações também podem ser definidas com frequência horária e diária.</block>
 </blocks>
