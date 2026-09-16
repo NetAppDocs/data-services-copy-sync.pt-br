@@ -4,7 +4,7 @@ permalink: task-nfs-encryption.html
 keywords: encryption, in flight, data in flight, in-flight, data-in-flight, nfs, initiator, listener, port 
 summary: Se sua empresa tiver políticas de segurança rígidas, sincronize dados entre servidores NFS em redes diferentes usando criptografia de dados em trânsito. 
 ---
-= Sincronizar dados NFS usando criptografia de dados em trânsito no NetApp Copy and Sync
+= Crie relações de sincronização NFS criptografadas com NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

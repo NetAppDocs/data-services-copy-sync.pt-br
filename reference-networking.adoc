@@ -4,7 +4,7 @@ permalink: reference-networking.html
 keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
 summary: A rede para o NetApp Copy and Sync inclui conectividade entre o grupo de corretores de dados e os locais de origem e destino, além de uma conexão de saída de internet dos corretores de dados pela porta 443. 
 ---
-= Visão geral de rede para NetApp Copy and Sync
+= Requisitos de rede para NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

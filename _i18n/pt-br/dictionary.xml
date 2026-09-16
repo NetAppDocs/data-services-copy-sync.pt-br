@@ -90,7 +90,6 @@
   <block id="6b130e03ee8c8d322a6174a591d2b774" category="inline-link-macro">Aprenda como funciona o licenciamento</block>
   <block id="3b1417e2cc8a651004ff0099ad870a73" category="paragraph"><block ref="e8ff8b95d6e71d0badc3862de8130ad6" category="inline-link-macro-rx"></block> .</block>
   <block id="97ff8a17f533b6d33b6dd9059ff062e9" category="summary">Há duas maneiras de pagar pelos relacionamentos de sincronização após o término do teste gratuito de 14 dias.  A primeira opção é assinar o AWS ou o Azure para pagar conforme o uso ou pagar anualmente.  A segunda opção é comprar licenças diretamente da NetApp.</block>
-  <block id="92e6ea479d1d6dcd56315c41463d9c80" category="doc">Visão geral do licenciamento do NetApp Copy and Sync</block>
   <block id="8fb37e6d377a8a9b95cc0a3d7442751a" category="paragraph">Há duas maneiras de pagar pelos relacionamentos do NetApp Copy and Sync após o término do teste gratuito de 14 dias.  A primeira opção é assinar o AWS ou o Azure para pagar conforme o uso ou pagar anualmente.  A segunda opção é comprar licenças diretamente da NetApp.</block>
   <block id="5007e6fc0051f0461fcf883a08ac43be" category="paragraph">As licenças devem ser gerenciadas pelo NetApp Copy and Sync ou pelo site aplicável e *não* pelo NetApp Console.</block>
   <block id="f856f3b97c80815883c23bfe0ce6d8c2" category="section-title">Assinatura do Marketplace</block>
@@ -123,7 +122,6 @@
   <block id="ca4c3bf9d403da9e2d60487daa5822a4" category="paragraph">Essas credenciais são sempre salvas diretamente no próprio corretor de dados.  O corretor de dados reside em uma máquina na sua rede, seja ela local ou na sua conta na nuvem.  As credenciais nunca são disponibilizadas para a NetApp.</block>
   <block id="91d94bcb5137ebeaee0b1824fb283f72" category="paragraph">As credenciais são criptografadas localmente na máquina do corretor de dados usando o HashiCorp Vault.</block>
   <block id="1e7c04d680d075da65bdb418593cbd71" category="summary">Você pode obter ajuda com o NetApp Copy and Sync e encontrar mais informações por meio de vários recursos, incluindo fóruns, serviços de bate-papo e vídeos.</block>
-  <block id="b5ff8c21b9626811ebbac10d4557b5fc" category="doc">Perguntas frequentes técnicas sobre o NetApp Copy and Sync</block>
   <block id="a0d932b5085e493a71dbcdcc11a705b4" category="paragraph">Estas perguntas frequentes podem ajudar se você estiver apenas procurando uma resposta rápida para uma pergunta.</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">Começando</block>
   <block id="b63a0d346daefdd92757cc99e69565e3" category="paragraph">As perguntas a seguir estão relacionadas aos primeiros passos com o NetApp Copy and Sync.</block>
@@ -328,7 +326,6 @@
   <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Regiões do Governo do Azure</block>
   <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">China</block>
   <block id="f27a844031a45699c4da562fbbdaa243" category="summary">A rede para o NetApp Copy and Sync inclui conectividade entre o grupo de corretores de dados e os locais de origem e destino, além de uma conexão de saída de internet dos corretores de dados pela porta 443.</block>
-  <block id="f85f123b9db97e81827ef0ea7abdf217" category="doc">Visão geral de rede para NetApp Copy and Sync</block>
   <block id="1ccbb3a00a8670ff34e71787c69058b9" category="section-title">Localização do corretor de dados</block>
   <block id="42c5f165329383a0397894e0d024ef6c" category="paragraph">Um grupo de corretores de dados consiste em um ou mais corretores de dados instalados na nuvem ou em suas instalações.</block>
   <block id="f3e76ce6c2086bf4e3334c3b429897f4" category="section-title">Corretor de dados na nuvem</block>
@@ -386,7 +383,6 @@
   <block id="fd0cb271f0ac093ecb033a2bfea34fbd" category="paragraph">Seu navegador precisa acessar o seguinte endpoint para baixar logs para fins de solução de problemas:</block>
   <block id="c964e3aec545a38db906e6bb0b6a705f" category="paragraph">logs.cloudsync.netapp.com:443</block>
   <block id="f549fa5a7b8a70265d3f6f6fc5ae1943" category="summary">Verifique se sua origem e destinos atendem aos seguintes requisitos.</block>
-  <block id="bbb01ce9ba95b7a97c2f263c4272225c" category="doc">Preparar a origem e o destino no NetApp Copy and Sync</block>
   <block id="f7890760d0c96fe50a092d3ac5715549" category="paragraph">Verifique se sua origem e destinos atendem aos seguintes requisitos no NetApp Copy and Sync.</block>
   <block id="41413218d6e0e0f3841260f7834a57b2" category="list-text">A NetApp recomenda configurar os agentes de origem, de destino e de dados para usar um serviço NTP (Network Time Protocol).  A diferença de tempo entre os três componentes não deve exceder 5 minutos.</block>
   <block id="48803a619ce06c74ae2204113ce8b389" category="section-title">Diretório de destino</block>
@@ -715,7 +711,6 @@
   <block id="cf17244df6ede19648e8ce26d30c4ba0" category="paragraph"><block ref="cf17244df6ede19648e8ce26d30c4ba0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="022833d135f7e7e0b284d5b6cbc1d6d3" category="inline-link">Aprenda como iniciar um relacionamento de sincronização a partir da NetApp Data Classification</block>
   <block id="7b5f232088930bb6c4dd524b1ad8afc7" category="summary">Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync .  Uma alternativa é configurar o corretor de dados para acessar as credenciais diretamente de um HashiCorp Vault externo.</block>
-  <block id="c83f13bb91cc75ab9fba517d4f405555" category="doc">Configurar um grupo de corretores de dados para usar um HashiCorp Vault externo no NetApp Copy and Sync</block>
   <block id="7373b58f3100ed43d9b97a7f9e21546c" category="paragraph">Ao criar um relacionamento de sincronização que requer credenciais do Amazon S3, Azure ou Google Cloud, você precisa especificar essas credenciais por meio da interface de usuário ou API do NetApp Copy and Sync .  Uma alternativa é configurar o grupo de corretores de dados para acessar as credenciais (ou _segredos_) diretamente de um HashiCorp Vault externo.</block>
   <block id="e3889cfbde291df60959080b6d5b1432" category="paragraph">Esse recurso é suportado pela API Copiar e Sincronizar com relacionamentos de sincronização que exigem credenciais do Amazon S3, Azure ou Google Cloud.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Um</block>
@@ -1024,7 +1019,6 @@
   <block id="a6c9e3a7671c1fd9d7328c3be5d107b5" category="list-text">arquivo JSON</block>
   <block id="da71e727ce602ce0df332bf7acd04f2b" category="list-text">Este é o arquivo JSON que contém uma chave de conta de serviço que você deve ter preparado<block ref="8e7eb0db1ee4fd6a97230ce733e6c0b1" category="inline-xref-macro-rx"></block> .</block>
   <block id="febdb5376a041b31f655e631de8dd5d8" category="summary">Há duas maneiras de pagar pelos relacionamentos de sincronização após o término do teste gratuito de 14 dias.  A primeira opção é pagar conforme o uso.  A segunda opção é comprar licenças diretamente da NetApp.</block>
-  <block id="141c29d3014c9bfaa5f6ffd800376869" category="doc">Pague pelos relacionamentos de sincronização após o término do teste gratuito do NetApp Copy and Sync</block>
   <block id="7e70bb47069a219e0719dc79d80e13d5" category="paragraph">Há duas maneiras de pagar pelos relacionamentos de sincronização após o término do teste gratuito de 14 dias do NetApp Copy and Sync.  A primeira opção é assinar o AWS ou o Azure para pagar conforme o uso ou pagar anualmente.  A segunda opção é comprar licenças diretamente da NetApp.</block>
   <block id="97a214da03586723b3eda5c2057276c9" category="paragraph">Você pode assinar no AWS Marketplace ou no Azure Marketplace.  Você não pode assinar ambos.</block>
   <block id="ecc0dfd6f3ae02a7910e95f1905624ce" category="paragraph">Você tem a opção de usar licenças da NetApp com uma assinatura do marketplace.  Por exemplo, se você tiver 25 relacionamentos de sincronização, poderá pagar pelos primeiros 20 relacionamentos de sincronização usando uma licença e depois pagar conforme o uso da AWS ou do Azure com os 5 relacionamentos de sincronização restantes.</block>
@@ -1199,7 +1193,6 @@
   <block id="826f8292d9dd1df0d5e3440a37c5015b" category="list-text">Para confirmar, digite o nome do grupo e selecione *Excluir Grupo*.</block>
   <block id="0aaf5c6768c60c69298adc3572562a26" category="paragraph">Copiar e sincronizar remove os corretores de dados e exclui o grupo.</block>
   <block id="b7313c752ca12081edfba2212c0cc2e4" category="summary">Você pode gerenciar relacionamentos de sincronização a qualquer momento sincronizando dados imediatamente, alterando agendas e muito mais.</block>
-  <block id="e251a48c15e2586d786a259c5b6bd567" category="doc">Gerenciando relacionamentos de sincronização no NetApp Copy and Sync</block>
   <block id="5098dff32603bde98da154f57d0f7e2d" category="paragraph">Você pode gerenciar relacionamentos de sincronização no NetApp Copy and Sync a qualquer momento sincronizando dados imediatamente, alterando agendamentos e muito mais.</block>
   <block id="3751024f8814dd0f9cc7022c63dd219d" category="section-title">Execute uma sincronização de dados imediata</block>
   <block id="10b4a486c3639ec1166b66b77215e8c6" category="paragraph">Em vez de esperar pela próxima sincronização agendada, você pode sincronizar dados imediatamente entre a origem e o destino.</block>
@@ -1256,7 +1249,6 @@
   <block id="a06cbdd471532709a20804cd9a60cf7b" category="list-text">Selecione os relacionamentos de sincronização que deseja excluir, selecione *Excluir* e depois selecione *Excluir* novamente para confirmar.</block>
   <block id="8c25365da18b18c4181ac53c1681129b" category="paragraph">Copiar e sincronizar exclui os relacionamentos de sincronização.</block>
   <block id="f68b92ee815675ae3018eca060b553b7" category="summary">Crie e visualize relatórios para obter informações que você pode usar com a ajuda da equipe da NetApp para ajustar a configuração de um data broker e melhorar o desempenho.</block>
-  <block id="6cf864181e16eb926d1c763b77b4a825" category="doc">Crie e visualize relatórios para ajustar sua configuração no NetApp Copy and Sync</block>
   <block id="8db5cdc5f9dd2eb576dcaed8d44080cd" category="paragraph">Crie e visualize relatórios no NetApp Copy and Sync para obter informações que você pode usar com a ajuda da equipe da NetApp para ajustar a configuração de um data broker e melhorar o desempenho.</block>
   <block id="b9f1a0da291ab3c6b115c407d28d1ab9" category="inline-link">criando e concluindo com sucesso uma sincronização</block>
   <block id="ef7a7b1bec08bef324977926c1fc910c" category="section-title">Criar relatórios</block>
@@ -1292,7 +1284,6 @@
   <block id="8f678ca452a56dc17c7c9fc13e2e5f36" category="list-text">Na coluna *Ações de relatórios*, selecione o menu de ações para um caminho e selecione *Excluir último relatório* ou *Excluir todos os relatórios*.</block>
   <block id="4051a60e091a5882a67c28985f8c22c7" category="list-text">Confirme que deseja excluir o(s) relatório(s).</block>
   <block id="71904eaffc2ec470e49ce1a710f5e878" category="summary">Se sua empresa tiver políticas de segurança rígidas, sincronize dados entre servidores NFS em redes diferentes usando criptografia de dados em trânsito.</block>
-  <block id="5f1ab66c45896f6843b43ee46d7ae89c" category="doc">Sincronizar dados NFS usando criptografia de dados em trânsito no NetApp Copy and Sync</block>
   <block id="8f58b27b3c5fa8fe0f9512452224e9da" category="paragraph">Se sua empresa tiver políticas de segurança rígidas, você poderá sincronizar dados NFS usando criptografia de dados em trânsito no NetApp Copy and Sync.  Este recurso é suportado de um servidor NFS para outro servidor NFS e do Azure NetApp Files para o Azure NetApp Files.</block>
   <block id="81c917d52736001d7efd43b0f0ddc92c" category="paragraph">Por exemplo, você pode querer sincronizar dados entre dois servidores NFS que estão em redes diferentes.  Ou talvez você precise transferir dados com segurança no Azure NetApp Files entre sub-redes ou regiões.</block>
   <block id="d6dc650d0d220e29e9345f6a653d7ec3" category="section-title">Como funciona a criptografia de dados em trânsito</block>
@@ -1358,7 +1349,6 @@
   <block id="39cd9e3fa50eeb2b66a750a04c154460" category="paragraph"><block ref="39cd9e3fa50eeb2b66a750a04c154460" category="inline-image-macro-rx" type="image"></block></block>
   <block id="433ce1d0435ebad28cd42f8734e96bad" category="paragraph">Copiar e sincronizar começa a criar o novo relacionamento de sincronização.  Quando terminar, selecione *Exibir no painel* para ver detalhes sobre o novo relacionamento.</block>
   <block id="199c7ab26dac1d8df30cb6cd16e57658" category="summary">Se você estiver planejando sincronizar dados de um armazenamento de objetos para outro (por exemplo, do Amazon S3 para o Azure Blob) usando o NetApp Copy and Sync, será necessário preparar o grupo do data broker antes de criar o relacionamento de sincronização.</block>
-  <block id="1eef824263d82ff0f8415403e0b2e89f" category="doc">Preparar um data broker para sincronizar dados entre o armazenamento de objetos no NetApp Copy and Sync</block>
   <block id="a0be1e9cf521352c38fac7843ecd8424" category="paragraph">Se você estiver planejando sincronizar dados de um armazenamento de objetos para outro (por exemplo, do Amazon S3 para o Azure Blob) no NetApp Copy and Sync, será necessário preparar o grupo do data broker antes de criar o relacionamento de sincronização.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Sobre esta tarefa</block>
   <block id="8b29cf1534de96e7d8703b38dbc8b848" category="paragraph">Para preparar o grupo do data broker, você precisará modificar a configuração do scanner.  Se você não modificar a configuração, poderá notar problemas de desempenho nesse relacionamento de sincronização.</block>
@@ -1854,7 +1844,6 @@
   <block id="411af02bdc9672ad2ee32883bb960a04" category="list-text">Insira um nome para o corretor de dados e selecione *Continuar*.</block>
   <block id="e75a211b2366ec05af877ea76987f1de" category="paragraph">Após o carregamento da página de instruções, siga as instruções que incluem um link exclusivo para baixar o instalador.</block>
   <block id="97ee9add392d14ccabb3000701440c2d" category="list-text">Escolha habilitar o acesso à *AWS*, ao *Google Cloud* ou a ambos.</block>
-  <block id="dd4b35c3c87be83b2116adbebed5333d" category="doc">Registre-se para obter suporte para NetApp Copy and Sync</block>
   <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">Este é um ID gerado pelo sistema que corresponde ao seu e-mail. Na página *Gerenciamento de NSS*, você pode visualizar seu e-mail no <block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> menu.</block>
@@ -1986,4 +1975,15 @@
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
   <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">Ao configurar o agendamento, você deve inserir um valor para quando *a próxima sincronização será iniciada automaticamente*. O Copy and Sync usa *UTC*, não a hora local. Planeje-se de acordo ao definir o horário agendado.</block>
   <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização. Você pode programar um relacionamento para sincronizar dados a cada 1 minuto. As programações também podem ser definidas com frequência horária e diária.</block>
+  <block id="40d8a3c56d215e830feb9897421666aa" category="doc">Saiba mais sobre licenciamento no NetApp Copy and Sync</block>
+  <block id="ae93ff3e8a6fd875fb9dfdd2fbbbf45f" category="doc">Perguntas frequentes técnicas sobre o NetApp Copy and Sync</block>
+  <block id="6809b01eb3405addc3e0512ed7f6cf9e" category="doc">Requisitos de rede para NetApp Copy and Sync</block>
+  <block id="db37b7240360f352ce5e2bdb05b9f077" category="doc">Requisitos de origem e destino para NetApp Copy and Sync</block>
+  <block id="904c0337845f4afa18ed887f99553600" category="doc">Configure o HashiCorp Vault para um grupo de agentes de dados do NetApp Copy and Sync</block>
+  <block id="14a4ad343f91944d4a37cf5e5ab5c7b0" category="doc">Pague pelas relações de sincronização em NetApp Copy and Sync</block>
+  <block id="13ab8acd2a2c62b3e9993669a5c9bc75" category="doc">Gerencie os relacionamentos de sincronização no NetApp Copy and Sync</block>
+  <block id="675cb87abb3564c2962cfc9ccacff637" category="doc">Crie e visualize relatórios no NetApp Copy and Sync</block>
+  <block id="65382a5d17ea8050edfbcd3859161b26" category="doc">Crie relações de sincronização NFS criptografadas com NetApp Copy and Sync</block>
+  <block id="03e3965a711708f0b091171972631db2" category="doc">Prepare um data broker para storage de objetos em NetApp Copy and Sync</block>
+  <block id="14aea1634adf0b6ca9116bee54cc7c9b" category="doc">Registre o NetApp Copy and Sync para obter suporte</block>
 </blocks>

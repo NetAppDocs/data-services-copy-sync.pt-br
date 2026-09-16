@@ -4,7 +4,7 @@ permalink: reference-requirements.html
 keywords: networking, nfs, cifs, smb, version, connection, google, gcp, azure, blob, service account, resource, permissions, networking, version, ntp, network, protocol, aws efs requirements, efs requirements, s3 requirements, azure blob requirements, blob requirements, azure netapp files, cifs requirements, smb requirements, google cloud storage, gcp, ibm cloud object storage, storagegrid, storage tier, blob storage tier, storage class, s3 storage class, nfs versions, smb versions, box 
 summary: Verifique se sua origem e destinos atendem aos seguintes requisitos. 
 ---
-= Preparar a origem e o destino no NetApp Copy and Sync
+= Requisitos de origem e destino para NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
