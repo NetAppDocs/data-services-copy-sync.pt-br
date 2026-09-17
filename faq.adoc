@@ -54,7 +54,7 @@ Para preços de pagamento conforme o uso, as cobranças do serviço de cópia e 
 
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["Veja os preços de pagamento conforme o uso na AWS"^]
 * https://aws.amazon.com/marketplace/pp/B06XX5V3M2["Veja os preços anuais na AWS"^]
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Ver preços no Azure"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Ver preços no Azure"^]
 
 
 Licenças de cópia e sincronização também estão disponíveis por meio do seu representante da NetApp .  Cada licença permite 20 relacionamentos de sincronização por 12 meses.

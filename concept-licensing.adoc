@@ -37,7 +37,7 @@ O recurso Copiar e Sincronizar é compatível apenas com assinaturas do Marketpl
 
 Com uma assinatura de pagamento por hora, você é cobrado por hora com base no número de relacionamentos de sincronização que cria.
 
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Ver preços no Azure"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Ver preços no Azure"^]
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["Veja os preços de pagamento conforme o uso na AWS"^]
 
 

@@ -262,7 +262,7 @@ TIP: Esse mesmo recurso está disponível ao sincronizar dados com o StorageGRID
 
 *Resultado*
 
-A função Copiar e Sincronizar inicia a sincronização de dados entre a origem e o destino. Estatísticas sobre quanto tempo a sincronização levou, se foi interrompida e quantos arquivos foram copiados, verificados ou excluídos estão disponíveis. Em seguida, você pode gerenciar seu link:task-managing-relationships.html["sincronizar relacionamentos"], link:task-managing-data-brokers.html["gerencie seus corretores de dados"] ou link:task-managing-reports.html#creating-reports["crie relatórios para otimizar seu desempenho e configuração"].
+A função Copiar e Sincronizar inicia a sincronização de dados entre a origem e o destino. Estatísticas sobre quanto tempo a sincronização levou, se foi interrompida e quantos arquivos foram copiados, verificados ou excluídos estão disponíveis. Em seguida, você pode gerenciar seu link:task-managing-relationships.html["sincronizar relacionamentos"], link:task-managing-data-brokers.html["gerencie seus corretores de dados"] ou link:task-managing-reports.html["crie relatórios para otimizar seu desempenho e configuração"].
 
 
 
