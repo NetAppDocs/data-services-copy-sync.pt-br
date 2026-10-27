@@ -15,8 +15,6 @@
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">Notas de versão do NetApp Console</block>
   <block id="07a0717927710f1dcb5683cb20238dcb" category="paragraph">Para obter detalhes sobre o que mudou, consulte o<block ref="a3987562479f1a66db4eec298b79e00c" category="inline-link-macro-rx"></block> .</block>
   <block id="d7e55ebe5996d2f4a71007c5b1e1a8f4" category="summary">Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio de APIs RESTful.</block>
-  <block id="fd59b601807b541345b87130ff3bbd48" category="doc">APIs de NetApp Copy and Sync</block>
-  <block id="1a7f2c01296bcc340aecf2c150c0dec3" category="paragraph">Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio da API RESTful.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="section-title">Começar</block>
   <block id="7ec5388381b24f73dd0eed840e406178" category="paragraph">Para começar a usar a API Copy and Sync, você precisa obter um token de usuário e sua ID de conta do NetApp Console .  Você precisará adicionar o token e o ID da conta ao cabeçalho de autorização ao fazer chamadas de API.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Passos</block>
@@ -1970,7 +1968,6 @@
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
   <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">Ao configurar o agendamento, você deve inserir um valor para quando *a próxima sincronização será iniciada automaticamente*. O Copy and Sync usa *UTC*, não a hora local. Planeje-se de acordo ao definir o horário agendado.</block>
   <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">Escolha uma programação recorrente para sincronizações futuras ou desative a programação de sincronização. Você pode programar um relacionamento para sincronizar dados a cada 1 minuto. As programações também podem ser definidas com frequência horária e diária.</block>
-  <block id="40d8a3c56d215e830feb9897421666aa" category="doc">Saiba mais sobre licenciamento no NetApp Copy and Sync</block>
   <block id="ae93ff3e8a6fd875fb9dfdd2fbbbf45f" category="doc">Perguntas frequentes técnicas sobre o NetApp Copy and Sync</block>
   <block id="6809b01eb3405addc3e0512ed7f6cf9e" category="doc">Requisitos de rede para NetApp Copy and Sync</block>
   <block id="db37b7240360f352ce5e2bdb05b9f077" category="doc">Requisitos de origem e destino para NetApp Copy and Sync</block>
@@ -1984,4 +1981,7 @@
   <block id="f872b6fc1ee78b996195a40e069beff7" category="list-text"><block ref="f872b6fc1ee78b996195a40e069beff7" category="inline-link-rx"></block></block>
   <block id="c067d1adda8060b12c3ecf15c1e29766" category="paragraph">A função Copiar e Sincronizar inicia a sincronização de dados entre a origem e o destino. Estatísticas sobre quanto tempo a sincronização levou, se foi interrompida e quantos arquivos foram copiados, verificados ou excluídos estão disponíveis. Em seguida, você pode gerenciar seu <block ref="6d7776ec96aeaba5af380a54aca37776" category="inline-link-macro-rx"></block>, <block ref="a032e3bf506f732a0e85caa4ad9deb9d" category="inline-link-macro-rx"></block> ou <block ref="ac5b6b02729c5e0b93891b823e28e426" category="inline-link-macro-rx"></block>.</block>
   <block id="8956bebbad93fd0bc94eb7cb7a6eedea" category="paragraph"><block ref="b19ea243cd5e3ea52015c74405abe62c" prefix="" category="inline-code"></block></block>
+  <block id="ac59c297ac7334b9be59392607f97254" category="doc">Conecte-se à API do NetApp Copy and Sync</block>
+  <block id="179cd4e2019e6bd0efc41a52dd0309ce" category="paragraph">Os recursos do NetApp Copy and Sync que estão disponíveis na interface da web também estão disponíveis por meio da API REST.</block>
+  <block id="1ca5468c0099601dc8f36fcd68af7a67" category="doc">Opções de licenciamento no NetApp Copy and Sync</block>
 </blocks>

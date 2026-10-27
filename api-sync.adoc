@@ -4,7 +4,7 @@ permalink: api-sync.html
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
 summary: Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio de APIs RESTful. 
 ---
-= APIs de NetApp Copy and Sync
+= Conecte-se à API do NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Os recursos de NetApp Copy and Sync disponíveis por meio da interface 
 
 
 [role="lead"]
-Os recursos de NetApp Copy and Sync disponíveis por meio da interface do usuário da Web também estão disponíveis por meio da API RESTful.
+Os recursos do NetApp Copy and Sync que estão disponíveis na interface da web também estão disponíveis por meio da API REST.
 
 
 
