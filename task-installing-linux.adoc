@@ -28,7 +28,7 @@ Ao criar um novo grupo de data broker para o NetApp Copy and Sync, escolha a op�
 +
 O CentOS Stream não é suportado.
 
-** Red Hat Enterprise Linux 8.5, 8.8, 8.9 e 9.4
+** Red Hat Enterprise Linux 8.5, 8.8, 8.9, 9.4 e 9.8
 ** Rocky Linux 9
 ** Ubuntu Server 20.04 LTS, 23.04 LTS e 24.04 LTS
 ** Servidor SUSE Linux Enterprise 15 SP1
